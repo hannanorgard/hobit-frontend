@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import React from 'react';
 
 // Import Swiper React components
@@ -9,7 +10,7 @@ import 'swiper/css/effect-coverflow';
 import 'swiper/css/pagination';
 
 // import required modules
-import { EffectCoverflow, Pagination } from 'swiper';
+import { EffectCoverflow } from 'swiper';
 import { Styled } from './ProgramPage.styled';
 
 const ProgramPage = () => {
@@ -33,36 +34,46 @@ const ProgramPage = () => {
           scale: 0.5
         }}
         pagination
-        modules={[EffectCoverflow, Pagination]}
+        modules={[EffectCoverflow]}
         className="mySwiper">
         <SwiperSlide>
           <Styled.Card>
-            <h1>Card 1</h1>
+            <h2>Happiness</h2>
             <img src="./assets/startpageimg.png" alt="something" />
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed congue ornare dictum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec commodo magna nulla, sit amet blandit leo varius vel. Donec semper mauris dolor, lacinia suscipit risus pharetra vehicula. Donec ut rhoncus nibh, varius tempor ante. Proin ipsum lectus, dapibus.</p>
+            <button type="submit">Start</button>
           </Styled.Card>
         </SwiperSlide>
         <SwiperSlide>
           <Styled.Card>
-            <h1>Card 2</h1>
+            <h2>Health</h2>
             <img src="./assets/startpageimg.png" alt="something" />
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed congue ornare dictum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec commodo magna nulla, sit amet blandit leo varius vel. Donec semper mauris dolor, lacinia suscipit risus pharetra vehicula. Donec ut rhoncus nibh, varius tempor ante. Proin ipsum lectus, dapibus.</p>
+            <button type="submit">Start</button>
           </Styled.Card>
         </SwiperSlide>
         <SwiperSlide>
           <Styled.Card>
-            <h1>Card 3</h1>
+            <h2>Confidence</h2>
             <img src="./assets/startpageimg.png" alt="something" />
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed congue ornare dictum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec commodo magna nulla, sit amet blandit leo varius vel. Donec semper mauris dolor, lacinia suscipit risus pharetra vehicula. Donec ut rhoncus nibh, varius tempor ante. Proin ipsum lectus, dapibus.</p>
+            <button type="submit">Start</button>
           </Styled.Card>
         </SwiperSlide>
         <SwiperSlide>
           <Styled.Card>
-            <h1>Card 4</h1>
+            <h2>Focus</h2>
             <img src="./assets/startpageimg.png" alt="something" />
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed congue ornare dictum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec commodo magna nulla, sit amet blandit leo varius vel. Donec semper mauris dolor, lacinia suscipit risus pharetra vehicula. Donec ut rhoncus nibh, varius tempor ante. Proin ipsum lectus, dapibus.</p>
+            <button type="submit">Start</button>
           </Styled.Card>
         </SwiperSlide>
         <SwiperSlide>
           <Styled.Card>
-            <h1>Card 5</h1>
+            <h2>Serenity</h2>
             <img src="./assets/startpageimg.png" alt="something" />
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed congue ornare dictum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec commodo magna nulla, sit amet blandit leo varius vel. Donec semper mauris dolor, lacinia suscipit risus pharetra vehicula. Donec ut rhoncus nibh, varius tempor ante. Proin ipsum lectus, dapibus.</p>
+            <button type="submit">Start</button>
           </Styled.Card>
         </SwiperSlide>
       </Swiper>
