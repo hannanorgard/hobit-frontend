@@ -2,9 +2,11 @@ import React from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { Provider } from 'react-redux';
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
-import Login from 'components/StartPage'
-import NotFound from 'components/NotFound'
+import StartPage from 'components/StartPage';
+import NotFoundPage from 'components/NotFoundPage';
 import ProgramPage from 'components/ProgramPage';
+import ProfilePage from 'components/ProfilePage';
+import ActiveProgramPage from 'components/ActiveProgramPage';
 
 import user from 'reducers/user';
 
@@ -18,9 +20,11 @@ export const App = () => {
     <Provider store={store}>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Login />} />
+          <Route path="/" element={<StartPage />} />
           <Route path="/programs" element={<ProgramPage />} />
-          <Route path="*" element={<NotFound />} />
+          <Route path="/activeprogram" element={<ActiveProgramPage />} />
+          <Route path="/profile" element={<ProfilePage />} />
+          <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </BrowserRouter>
     </Provider>
