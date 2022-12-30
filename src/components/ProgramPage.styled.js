@@ -7,5 +7,6 @@ export const Styled = {
     border: 2px solid black;
     margin: auto;
     display: block;
+    border-radius: 2em;
 `
 }

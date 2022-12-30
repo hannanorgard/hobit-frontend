@@ -18,6 +18,7 @@ const ProgramPage = () => {
     <>
       <div>
         <h1>What do you want to improve about yourself?</h1>
+        <p>Change can be hard, but it can also be fun and exciting! Start by picking one aspect of your life that you would like to challenge yourself by building healthier habits.</p>
       </div>
       <Swiper
         effect="coverflow"
