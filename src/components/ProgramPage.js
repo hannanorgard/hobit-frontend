@@ -15,7 +15,11 @@ const ProgramPage = () => {
   const navigate = useNavigate();
   const username = useSelector((store) => store.user.username);
   const selectedCategory = useSelector((store) => store.user.activeProgram);
-  // console.log(selectedCategory)
+  const accessToken = useSelector((store) => store.user.accessToken);
+
+  if (!accessToken) {
+    navigate('/login');
+  }
 
   useEffect(() => {
     if (selectedCategory) {
