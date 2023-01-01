@@ -1,19 +1,50 @@
 /* eslint-disable max-len */
-import React from 'react';
-
-// Import Swiper React components
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import user from 'reducers/user';
 import { Swiper, SwiperSlide } from 'swiper/react';
-
-// Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/effect-coverflow';
 import 'swiper/css/pagination';
-
-// import required modules
 import { EffectCoverflow } from 'swiper';
 import { Styled } from './ProgramPage.styled';
 
 const ProgramPage = () => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const username = useSelector((store) => store.user.username);
+  const selectedCategory = useSelector((store) => store.user.activeProgram);
+  // console.log(selectedCategory)
+
+  useEffect(() => {
+    if (selectedCategory) {
+      navigate('/activeprogram');
+    }
+  }, [selectedCategory, navigate])
+
+  const handleClick = (category) => {
+    // console.log('handleClick invoked')
+    const options = {
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        category,
+        day: 1
+      })
+    }
+    fetch(`https://hobit-backend-z7k2rr57ca-lz.a.run.app/updateActiveProgram/${username}`, options)
+      .then((response) => response.json())
+      .then((data) => {
+        // console.log(data)
+        dispatch(user.actions.setActiveProgram(data.programs.activeProgram.category));
+        dispatch(user.actions.setActiveProgramDay(data.programs.activeProgram.day));
+        dispatch(user.actions.setError(null));
+      });
+  };
+
   return (
     <>
       <div>
@@ -42,7 +73,11 @@ const ProgramPage = () => {
             <h2>Happiness</h2>
             <img src="./assets/startpageimg.png" alt="something" />
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed congue ornare dictum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec commodo magna nulla, sit amet blandit leo varius vel. Donec semper mauris dolor, lacinia suscipit risus pharetra vehicula. Donec ut rhoncus nibh, varius tempor ante. Proin ipsum lectus, dapibus.</p>
-            <button type="submit">Start</button>
+            <button
+              type="submit"
+              onClick={() => handleClick('happier')}>
+              Start
+            </button>
           </Styled.Card>
         </SwiperSlide>
         <SwiperSlide>
@@ -50,7 +85,11 @@ const ProgramPage = () => {
             <h2>Health</h2>
             <img src="./assets/startpageimg.png" alt="something" />
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed congue ornare dictum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec commodo magna nulla, sit amet blandit leo varius vel. Donec semper mauris dolor, lacinia suscipit risus pharetra vehicula. Donec ut rhoncus nibh, varius tempor ante. Proin ipsum lectus, dapibus.</p>
-            <button type="submit">Start</button>
+            <button
+              type="submit"
+              onClick={() => handleClick('Health')}>
+              Start
+            </button>
           </Styled.Card>
         </SwiperSlide>
         <SwiperSlide>
@@ -58,7 +97,11 @@ const ProgramPage = () => {
             <h2>Confidence</h2>
             <img src="./assets/startpageimg.png" alt="something" />
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed congue ornare dictum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec commodo magna nulla, sit amet blandit leo varius vel. Donec semper mauris dolor, lacinia suscipit risus pharetra vehicula. Donec ut rhoncus nibh, varius tempor ante. Proin ipsum lectus, dapibus.</p>
-            <button type="submit">Start</button>
+            <button
+              type="submit"
+              onClick={() => handleClick('Confidence')}>
+              Start
+            </button>
           </Styled.Card>
         </SwiperSlide>
         <SwiperSlide>
@@ -66,7 +109,11 @@ const ProgramPage = () => {
             <h2>Focus</h2>
             <img src="./assets/startpageimg.png" alt="something" />
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed congue ornare dictum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec commodo magna nulla, sit amet blandit leo varius vel. Donec semper mauris dolor, lacinia suscipit risus pharetra vehicula. Donec ut rhoncus nibh, varius tempor ante. Proin ipsum lectus, dapibus.</p>
-            <button type="submit">Start</button>
+            <button
+              type="submit"
+              onClick={() => handleClick('Focus')}>
+              Start
+            </button>
           </Styled.Card>
         </SwiperSlide>
         <SwiperSlide>
@@ -74,7 +121,11 @@ const ProgramPage = () => {
             <h2>Serenity</h2>
             <img src="./assets/startpageimg.png" alt="something" />
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed congue ornare dictum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec commodo magna nulla, sit amet blandit leo varius vel. Donec semper mauris dolor, lacinia suscipit risus pharetra vehicula. Donec ut rhoncus nibh, varius tempor ante. Proin ipsum lectus, dapibus.</p>
-            <button type="submit">Start</button>
+            <button
+              type="submit"
+              onClick={() => handleClick('Serenity')}>
+              Start
+            </button>
           </Styled.Card>
         </SwiperSlide>
       </Swiper>
