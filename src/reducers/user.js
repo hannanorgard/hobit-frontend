@@ -6,14 +6,9 @@ const user = createSlice({
     username: null,
     userId: null,
     accessToken: null,
-    programs: {
-      activeProgram: {
-        category: null,
-        day: null,
-        startDate: null
-      },
-      completedPrograms: ['']
-    },
+    activeProgram: null,
+    activeProgramDay: null,
+    completedPrograms: [''],
     error: null
   },
   reducers: {
@@ -21,13 +16,18 @@ const user = createSlice({
       store.username = action.payload;
     },
     setUserId: (store, action) => {
-      store.userIderror = action.payload;
+      store.userId = action.payload;
     },
     setAccessToken: (store, action) => {
       store.accessToken = action.payload;
     },
-    setPrograms: (store, action) => {
-      store.programs = action.payload;
+    setActiveProgram: (store, action) => {
+      // console.log('setActiveProgram')
+      store.activeProgram = action.payload;
+    },
+    setActiveProgramDay: (store, action) => {
+      // console.log('setActiveProgramDay')
+      store.activeProgramDay = action.payload;
     },
     setError: (store, action) => {
       store.error = action.payload;

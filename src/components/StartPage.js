@@ -1,6 +1,7 @@
+/* eslint-disable max-len */
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React, { useEffect, useState } from 'react';
-import { useDispatch, useSelector, batch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { API_URL } from 'utils/utils';
 import user from 'reducers/user';
@@ -13,6 +14,7 @@ const StartPage = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const accessToken = useSelector((store) => store.user.accessToken);
+
   useEffect(() => {
     if (accessToken) {
       navigate('/programs');
@@ -32,19 +34,18 @@ const StartPage = () => {
       .then((response) => response.json())
       .then((data) => {
         if (data.success) {
-          batch(() => {
-            dispatch(user.actions.setUsername(data.response.username));
-            dispatch(user.actions.setUserId(data.response.id))
-            dispatch(user.actions.setAccessToken(data.response.accessToken));
-            dispatch(user.actions.setError(null));
-          });
+          // console.log(data)
+          dispatch(user.actions.setUsername(data.response.username));
+          dispatch(user.actions.setUserId(data.response.id))
+          dispatch(user.actions.setAccessToken(data.response.accessToken));
+          dispatch(user.actions.setActiveProgram(data.response.activeProgram));
+          dispatch(user.actions.setActiveProgramDay(data.response.day));
+          dispatch(user.actions.setError(null))
         } else {
-          batch(() => {
-            dispatch(user.actions.setUsername(null));
-            dispatch(user.actions.setUserId(null))
-            dispatch(user.actions.setAccessToken(null));
-            dispatch(user.actions.setError(data.response));
-          });
+          dispatch(user.actions.setUsername(null));
+          dispatch(user.actions.setUserId(null))
+          dispatch(user.actions.setAccessToken(null));
+          dispatch(user.actions.setError(data.response));
         }
       })
   }
