@@ -36,15 +36,17 @@ const ProgramPage = () => {
       },
       body: JSON.stringify({
         category,
-        day: 1
+        day: 1,
+        startDate: new Date()
       })
     }
     fetch(`https://hobit-backend-z7k2rr57ca-lz.a.run.app/updateActiveProgram/${username}`, options)
       .then((response) => response.json())
       .then((data) => {
-        // console.log(data)
+        console.log(data)
         dispatch(user.actions.setActiveProgram(data.programs.activeProgram.category));
         dispatch(user.actions.setActiveProgramDay(data.programs.activeProgram.day));
+        dispatch(user.actions.setActiveProgramStartDate(data.programs.activeProgram.startDate));
         dispatch(user.actions.setError(null));
       });
   };

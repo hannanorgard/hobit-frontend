@@ -8,6 +8,7 @@ const user = createSlice({
     accessToken: null,
     activeProgram: null,
     activeProgramDay: null,
+    activeProgramStartDate: null,
     completedPrograms: [''],
     error: null
   },
@@ -28,6 +29,10 @@ const user = createSlice({
     setActiveProgramDay: (store, action) => {
       // console.log('setActiveProgramDay')
       store.activeProgramDay = action.payload;
+    },
+    setActiveProgramStartDate: (store, action) => {
+      // console.log('setActiveProgramStartDate')
+      store.activeProgramStartDate = action.payload;
     },
     setError: (store, action) => {
       store.error = action.payload;
