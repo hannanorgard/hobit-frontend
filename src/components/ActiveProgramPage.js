@@ -9,6 +9,9 @@ const ActiveProgramPage = () => {
   const navigate = useNavigate();
   // const username = useSelector((store) => store.user.username);
   const accessToken = useSelector((store) => store.user.accessToken);
+  const activeProgramStartDate = useSelector((store) => store.user.activeProgramStartDate);
+  const startDate = new Date(activeProgramStartDate);
+  const currentDay = Math.floor((Date.now() - startDate) / 1000 / 60 / 60 / 24) + 1;
 
   if (!accessToken) {
     navigate('/');
@@ -25,7 +28,7 @@ const ActiveProgramPage = () => {
         <button type="button" onClick={handleLogout}>LOG OUT</button>
       </div>
       <div>
-        <h2>You&apos;re on DAY 2 of your happiness initiative!</h2>
+        <h2>You&apos;re on DAY {currentDay} of your happiness initiative!</h2>
       </div>
       <Styled.ChallengeContainer>
         <div>
