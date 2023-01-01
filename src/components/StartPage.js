@@ -34,12 +34,13 @@ const StartPage = () => {
       .then((response) => response.json())
       .then((data) => {
         if (data.success) {
-          // console.log(data)
+          console.log(data)
           dispatch(user.actions.setUsername(data.response.username));
           dispatch(user.actions.setUserId(data.response.id))
           dispatch(user.actions.setAccessToken(data.response.accessToken));
           dispatch(user.actions.setActiveProgram(data.response.activeProgram));
           dispatch(user.actions.setActiveProgramDay(data.response.day));
+          dispatch(user.actions.setActiveProgramStartDate(data.response.startDate));
           dispatch(user.actions.setError(null))
         } else {
           dispatch(user.actions.setUsername(null));
