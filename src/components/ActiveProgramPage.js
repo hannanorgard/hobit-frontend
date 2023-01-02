@@ -41,44 +41,54 @@ const ActiveProgramPage = () => {
     dispatch(user.actions.setAccessToken(null));
   };
 
-  return (
-    <Styled.Wrapper>
+  if (currentDay > 7) {
+    return (
       <div>
         <button type="button">PROFILE</button>
         <button type="button" onClick={handleLogout}>LOG OUT</button>
+        <h1>Congrats, you completed the week!</h1>
       </div>
-      <div>
-        <h2>You&apos;re on DAY {currentDay} of your {activeProgram} initiative!</h2>
-      </div>
-      <Styled.ChallengeContainer>
+    )
+  } else {
+    return (
+      <Styled.Wrapper>
         <div>
-          <h3>Past challenges</h3>
-          {objects
-            .filter((object, index) => index + 1 < currentDay)
-            .map((object) => (
-              <div>
-                <h1>{object.title}</h1>
-              </div>
-            ))}
+          <button type="button">PROFILE</button>
+          <button type="button" onClick={handleLogout}>LOG OUT</button>
         </div>
         <div>
-          <h3>Today&apos;s challenge</h3>
-          {/* Map over the objects array and render a component for each object */}
-          {objects.map((object, index) => {
-            if (index + 1 === currentDay) {
-              return (
+          <h2>You&apos;re on DAY {currentDay} of your {activeProgram} initiative!</h2>
+        </div>
+        <Styled.ChallengeContainer>
+          <div>
+            <h3>Past challenges</h3>
+            {objects
+              .filter((object, index) => index + 1 < currentDay)
+              .map((object) => (
                 <div>
                   <h1>{object.title}</h1>
-                  <h2>{object.description}</h2>
                 </div>
-              )
-            }
-            return null;
-          })}
-        </div>
-      </Styled.ChallengeContainer>
-    </Styled.Wrapper>
-  )
+              ))}
+          </div>
+          <div>
+            <h3>Today&apos;s challenge</h3>
+            {/* Map over the objects array and render a component for each object */}
+            {objects.map((object, index) => {
+              if (index + 1 === currentDay) {
+                return (
+                  <div>
+                    <h1>{object.title}</h1>
+                    <h2>{object.description}</h2>
+                  </div>
+                )
+              }
+              return null;
+            })}
+          </div>
+        </Styled.ChallengeContainer>
+      </Styled.Wrapper>
+    )
+  }
 }
 
 export default ActiveProgramPage;
