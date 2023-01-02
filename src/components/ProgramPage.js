@@ -18,7 +18,7 @@ const ProgramPage = () => {
   const accessToken = useSelector((store) => store.user.accessToken);
 
   if (!accessToken) {
-    navigate('/login');
+    navigate('/');
   }
 
   useEffect(() => {
@@ -93,7 +93,7 @@ const ProgramPage = () => {
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed congue ornare dictum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec commodo magna nulla, sit amet blandit leo varius vel. Donec semper mauris dolor, lacinia suscipit risus pharetra vehicula. Donec ut rhoncus nibh, varius tempor ante. Proin ipsum lectus, dapibus.</p>
             <button
               type="submit"
-              onClick={() => handleClick('Health')}>
+              onClick={() => handleClick('healthier')}>
               Start
             </button>
           </Styled.Card>
@@ -105,7 +105,7 @@ const ProgramPage = () => {
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed congue ornare dictum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec commodo magna nulla, sit amet blandit leo varius vel. Donec semper mauris dolor, lacinia suscipit risus pharetra vehicula. Donec ut rhoncus nibh, varius tempor ante. Proin ipsum lectus, dapibus.</p>
             <button
               type="submit"
-              onClick={() => handleClick('Confidence')}>
+              onClick={() => handleClick('confident')}>
               Start
             </button>
           </Styled.Card>
@@ -117,7 +117,7 @@ const ProgramPage = () => {
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed congue ornare dictum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec commodo magna nulla, sit amet blandit leo varius vel. Donec semper mauris dolor, lacinia suscipit risus pharetra vehicula. Donec ut rhoncus nibh, varius tempor ante. Proin ipsum lectus, dapibus.</p>
             <button
               type="submit"
-              onClick={() => handleClick('Focus')}>
+              onClick={() => handleClick('focused')}>
               Start
             </button>
           </Styled.Card>
