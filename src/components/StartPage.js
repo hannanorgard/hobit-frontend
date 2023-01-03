@@ -71,28 +71,30 @@ const StartPage = () => {
             </Styled.WelcomeText>
           </Styled.IntroContainer>
           <Styled.LoginOrRegister>
-            <Styled.LoginOrRegisterText htmlFor="register">Register</Styled.LoginOrRegisterText>
-            <input type="radio" id="register" checked={mode === 'register'} onChange={() => setMode('register')} />
-            <Styled.LoginOrRegisterText htmlFor="login">Login</Styled.LoginOrRegisterText>
-            <input type="radio" id="login" checked={mode === 'login'} onChange={() => setMode('login')} />
+            <Styled.RegisterText htmlFor="register">Register</Styled.RegisterText>
+            <Styled.InputFieldRadio1 type="radio" id="register" checked={mode === 'register'} onChange={() => setMode('register')} />
+            <Styled.LoginText htmlFor="login">Login</Styled.LoginText>
+            <Styled.InputFieldRadio2 type="radio" id="login" checked={mode === 'login'} onChange={() => setMode('login')} />
           </Styled.LoginOrRegister>
-          <Styled.UsernamePassword>
-            <form onSubmit={onFormSubmit}>
-              <label htmlFor="username">Username</label>
-              <input
-                type="text"
-                id="username"
-                value={username}
-                onChange={(e) => setUsername(e.target.value)} />
-              <label htmlFor="password">Password</label>
-              <input
-                type="password"
-                id="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)} />
-              <button type="submit">Submit</button>
-            </form>
-          </Styled.UsernamePassword>
+          <Styled.FormWrapper>
+            <Styled.Form onSubmit={onFormSubmit}>
+              <Styled.Labels htmlFor="username" id="untext">Username</Styled.Labels>
+              <div className="login">
+                <Styled.InputFieldUsername
+                  type="text"
+                  id="username"
+                  value={username}
+                  onChange={(e) => setUsername(e.target.value)} />
+                <Styled.Labels htmlFor="password" id="pwtext">Password</Styled.Labels>
+                <Styled.InputFieldPassword
+                  type="password"
+                  id="password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)} />
+                <Styled.SubmitBtn type="submit">Submit</Styled.SubmitBtn>
+              </div>
+            </Styled.Form>
+          </Styled.FormWrapper>
         </Styled.IntroAndLoginContainer>
       </Styled.Wrapper>
     </div>

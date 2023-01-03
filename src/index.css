@@ -27,3 +27,30 @@ code {
   display: block;
   width: 100%;
 }
+
+.login input[type="text"] {
+  background-color: transparent;
+}
+
+.login input[type="password"] {
+  background-color: transparent;
+}
+
+#untext {
+  position: absolute;
+  top: 62%;
+  left: 37%;
+  transition: 0.5;
+}
+
+#pwtext {
+  position: absolute;
+  top: 73%;
+  left: 37%;
+  transition: 0.5;
+}
+
+.login {
+  display: grid;
+  grid-template-columns: repeat(3,);
+}
