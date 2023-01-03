@@ -87,7 +87,7 @@ const ActiveProgramPage = () => {
   if (currentDay > 7) {
     return (
       <div>
-        <button type="button">PROFILE</button>
+        <button type="button" onClick={() => navigate('/profile')}>PROFILE</button>
         <button type="button" onClick={handleLogout}>LOG OUT</button>
         <h1>Congrats, you completed the week!</h1>
         <button
@@ -101,7 +101,7 @@ const ActiveProgramPage = () => {
     return (
       <Styled.Wrapper>
         <div>
-          <button type="button">PROFILE</button>
+          <button type="button" onClick={() => navigate('/profile')}>PROFILE</button>
           <button type="button" onClick={handleLogout}>LOG OUT</button>
         </div>
         <div>

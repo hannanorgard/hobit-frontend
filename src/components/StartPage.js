@@ -41,6 +41,7 @@ const StartPage = () => {
           dispatch(user.actions.setActiveProgram(data.response.activeProgram));
           dispatch(user.actions.setActiveProgramDay(data.response.day));
           dispatch(user.actions.setActiveProgramStartDate(data.response.startDate));
+          dispatch(user.actions.setCompletedProgram(data.response.completedPrograms));
           dispatch(user.actions.setError(null))
         } else {
           dispatch(user.actions.setUsername(null));
