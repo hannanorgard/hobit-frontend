@@ -23,7 +23,7 @@ const user = createSlice({
       store.accessToken = action.payload;
     },
     setActiveProgram: (store, action) => {
-      // console.log('setActiveProgram')
+      // console.log('setActiveProgram'
       store.activeProgram = action.payload;
     },
     setActiveProgramDay: (store, action) => {
@@ -33,6 +33,9 @@ const user = createSlice({
     setActiveProgramStartDate: (store, action) => {
       // console.log('setActiveProgramStartDate')
       store.activeProgramStartDate = action.payload;
+    },
+    setCompletedProgram: (store, action) => {
+      store.completedPrograms.push(action.payload);
     },
     setError: (store, action) => {
       store.error = action.payload;

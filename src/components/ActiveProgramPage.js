@@ -7,7 +7,7 @@ import { Styled } from './ActiveProgramPage.styled';
 const ActiveProgramPage = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  // const username = useSelector((store) => store.user.username);
+  const username = useSelector((store) => store.user.username);
   const accessToken = useSelector((store) => store.user.accessToken);
   const activeProgram = useSelector((store) => store.user.activeProgram);
   const activeProgramStartDate = useSelector((store) => store.user.activeProgramStartDate);
@@ -18,6 +18,48 @@ const ActiveProgramPage = () => {
   todaysDate.setHours(0, 0, 0, 0);
   const todaysDateTimestamp = todaysDate.getTime();
   const currentDay = Math.floor((todaysDateTimestamp - startDayTimestamp) / 86400000) + 1;
+
+  const resetActiveProgram = () => {
+    // console.log('completeProgram invoked')
+    const options = {
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        category: null,
+        day: null,
+        startDate: null
+      })
+    }
+    fetch(`https://hobit-backend-z7k2rr57ca-lz.a.run.app/updateActiveProgram/${username}`, options)
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data)
+        dispatch(user.actions.setActiveProgram(data.programs.activeProgram.category));
+        dispatch(user.actions.setActiveProgramDay(data.programs.activeProgram.day));
+        dispatch(user.actions.setActiveProgramStartDate(data.programs.activeProgram.startDate));
+        dispatch(user.actions.setError(null));
+      });
+  };
+
+  const addCompletedProgram = () => {
+    console.log('addCompletedProgram invoked')
+    const options = {
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        programName: activeProgram
+      })
+    }
+    fetch(`https://hobit-backend-z7k2rr57ca-lz.a.run.app/addCompletedProgram/${username}`, options)
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data)
+      });
+  };
 
   if (!accessToken) {
     navigate('/');
@@ -42,14 +84,16 @@ const ActiveProgramPage = () => {
   };
 
   if (currentDay > 7) {
+    addCompletedProgram();
+
     return (
       <div>
         <button type="button">PROFILE</button>
         <button type="button" onClick={handleLogout}>LOG OUT</button>
         <h1>Congrats, you completed the week!</h1>
         <button 
-        type="button"
-        onClick={clearActiveProgram}>
+          type="button"
+          onClick={resetActiveProgram}>
         Woohoo!
         </button>
       </div>
