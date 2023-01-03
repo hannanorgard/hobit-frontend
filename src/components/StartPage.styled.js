@@ -31,7 +31,7 @@ export const Styled = {
   WelcomeHeading: styled.h1`
     font-family: Unbounded;
     text-align: center;
-    color: #c16046;
+    color: #4CACBC;
   `,
   WelcomeText: styled.p`
     font-family: Barlow-Regular;

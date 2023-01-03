@@ -54,7 +54,7 @@ const StartPage = () => {
   return (
     <div>
       <Styled.Wrapper>
-        <Styled.HeaderImg src="assets/hobit-logo.png" alt="Hobit logo" />
+        <Styled.HeaderImg src="assets/logo-blue.png" alt="Hobit logo" />
         <Styled.ImageContainer>
           <Styled.StartPageImage src="assets/startpageimg.png" alt="Hiker enjoying the view" />
         </Styled.ImageContainer>
