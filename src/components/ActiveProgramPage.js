@@ -47,6 +47,11 @@ const ActiveProgramPage = () => {
         <button type="button">PROFILE</button>
         <button type="button" onClick={handleLogout}>LOG OUT</button>
         <h1>Congrats, you completed the week!</h1>
+        <button 
+        type="button"
+        onClick={clearActiveProgram}>
+        Woohoo!
+        </button>
       </div>
     )
   } else {
