@@ -41,7 +41,6 @@ const ProfilePage = () => {
           </div>
           <div>
             <h2>Badges</h2>
-            <p>Earn a new badge for every program you successfully complete</p>
             {completedPrograms.map((program) => (
               <img key={program} src={`assets/badges/${program}.png`} alt={`${program} badge`} />
             ))}
