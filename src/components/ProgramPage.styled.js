@@ -2,8 +2,8 @@ import styled from 'styled-components';
 
 export const Styled = {
   Card: styled.div`
-    height: 100%;
-    width: 100%;
+    height: 60%;
+    width: auto;
     border: 2px solid black;
     margin: auto;
     display: block;
