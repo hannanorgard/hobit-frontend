@@ -35,7 +35,7 @@ const user = createSlice({
       store.activeProgramStartDate = action.payload;
     },
     setCompletedProgram: (store, action) => {
-      store.completedPrograms.push(action.payload);
+      store.completedPrograms = action.payload;
     },
     setError: (store, action) => {
       store.error = action.payload;
