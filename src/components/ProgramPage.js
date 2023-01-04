@@ -77,7 +77,7 @@ const ProgramPage = () => {
         <SwiperSlide>
           <Styled.Card>
             <h2>Happiness</h2>
-            <img src="./assets/startpageimg.png" alt="something" />
+            <img src="./assets/card-images/happiness.jpg" alt="something" />
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed congue ornare dictum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec commodo magna nulla, sit amet blandit leo varius vel. Donec semper mauris dolor, lacinia suscipit risus pharetra vehicula. Donec ut rhoncus nibh, varius tempor ante. Proin ipsum lectus, dapibus.</p>
             <button
               type="submit"
@@ -89,7 +89,7 @@ const ProgramPage = () => {
         <SwiperSlide>
           <Styled.Card>
             <h2>Health</h2>
-            <img src="./assets/startpageimg.png" alt="something" />
+            <img src="./assets/card-images/health.jpg" alt="something" />
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed congue ornare dictum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec commodo magna nulla, sit amet blandit leo varius vel. Donec semper mauris dolor, lacinia suscipit risus pharetra vehicula. Donec ut rhoncus nibh, varius tempor ante. Proin ipsum lectus, dapibus.</p>
             <button
               type="submit"
@@ -101,7 +101,7 @@ const ProgramPage = () => {
         <SwiperSlide>
           <Styled.Card>
             <h2>Confidence</h2>
-            <img src="./assets/startpageimg.png" alt="something" />
+            <img src="./assets/card-images/confidence.jpg" alt="something" />
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed congue ornare dictum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec commodo magna nulla, sit amet blandit leo varius vel. Donec semper mauris dolor, lacinia suscipit risus pharetra vehicula. Donec ut rhoncus nibh, varius tempor ante. Proin ipsum lectus, dapibus.</p>
             <button
               type="submit"
@@ -113,7 +113,7 @@ const ProgramPage = () => {
         <SwiperSlide>
           <Styled.Card>
             <h2>Focus</h2>
-            <img src="./assets/startpageimg.png" alt="something" />
+            <img src="./assets/card-images/focus.jpg" alt="something" />
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed congue ornare dictum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec commodo magna nulla, sit amet blandit leo varius vel. Donec semper mauris dolor, lacinia suscipit risus pharetra vehicula. Donec ut rhoncus nibh, varius tempor ante. Proin ipsum lectus, dapibus.</p>
             <button
               type="submit"
@@ -125,7 +125,7 @@ const ProgramPage = () => {
         <SwiperSlide>
           <Styled.Card>
             <h2>Serenity</h2>
-            <img src="./assets/startpageimg.png" alt="something" />
+            <img src="./assets/card-images/serenity.jpg" alt="something" />
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed congue ornare dictum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec commodo magna nulla, sit amet blandit leo varius vel. Donec semper mauris dolor, lacinia suscipit risus pharetra vehicula. Donec ut rhoncus nibh, varius tempor ante. Proin ipsum lectus, dapibus.</p>
             <button
               type="submit"
