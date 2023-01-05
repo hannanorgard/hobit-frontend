@@ -8,10 +8,17 @@ const ProfilePage = () => {
   const completedPrograms = useSelector((store) => store.user.completedPrograms);
   const username = useSelector((store) => store.user.username);
   const activeProgram = useSelector((store) => store.user.activeProgram);
-  const activeProgramDay = useSelector((store) => store.user.activeProgramDay);
   const accessToken = useSelector((store) => store.user.accessToken);
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const activeProgramStartDate = useSelector((store) => store.user.activeProgramStartDate);
+  const startDate = new Date(activeProgramStartDate);
+  startDate.setHours(0, 0, 0, 0);
+  const startDayTimestamp = startDate.getTime();
+  const todaysDate = new Date();
+  todaysDate.setHours(0, 0, 0, 0);
+  const todaysDateTimestamp = todaysDate.getTime();
+  const currentDay = Math.floor((todaysDateTimestamp - startDayTimestamp) / 86400000) + 1;
 
   if (!accessToken) {
     navigate('/');
@@ -37,7 +44,7 @@ const ProfilePage = () => {
         <div>
           <div>
             <h2>Active Program</h2>
-            <p>{activeProgram} (Day {activeProgramDay})</p>
+            <p>{activeProgram} (Day {currentDay})</p>
           </div>
           <div>
             <h2>Badges</h2>
