@@ -77,25 +77,32 @@ const StartPage = () => {
             <Styled.LoginText htmlFor="login">Login</Styled.LoginText>
             <Styled.InputFieldRadio2 type="radio" id="login" checked={mode === 'login'} onChange={() => setMode('login')} />
           </Styled.LoginOrRegister>
-          <Styled.FormWrapper>
-            <Styled.Form onSubmit={onFormSubmit}>
-              <Styled.Labels htmlFor="username" id="untext">Username</Styled.Labels>
-              <div className="login">
-                <Styled.InputFieldUsername
+          <Styled.Form onSubmit={onFormSubmit}>
+            <div className="wrapper">
+              <div className="input-data">
+                <input
                   type="text"
+                  required
                   id="username"
                   value={username}
                   onChange={(e) => setUsername(e.target.value)} />
-                <Styled.Labels htmlFor="password" id="pwtext">Password</Styled.Labels>
-                <Styled.InputFieldPassword
+                <div className="underline" />
+                <label>Name</label>
+              </div>
+            </div>
+            <div className="wrapper">
+              <div className="input-data">
+                <input
                   type="password"
+                  required
                   id="password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)} />
-                <Styled.SubmitBtn type="submit">Submit</Styled.SubmitBtn>
+                <div className="underline" />
+                <label>Password</label>
               </div>
-            </Styled.Form>
-          </Styled.FormWrapper>
+            </div>
+          </Styled.Form>
         </Styled.IntroAndLoginContainer>
       </Styled.Wrapper>
     </div>
