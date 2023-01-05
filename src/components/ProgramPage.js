@@ -53,10 +53,10 @@ const ProgramPage = () => {
 
   return (
     <>
-      <div>
-        <h1>What do you want to improve about yourself?</h1>
-        <p>Change can be hard, but it can also be fun and exciting! Start by picking one aspect of your life that you would like to challenge yourself by building healthier habits.</p>
-      </div>
+      <Styled.TextDiv>
+        <Styled.ChallengeH1>What do you want to improve about yourself?</Styled.ChallengeH1>
+        <Styled.ChallengeP>Change can be hard, but it can also be fun and exciting! Start by picking one aspect of your life that you would like to challenge yourself by building healthier habits.</Styled.ChallengeP>
+      </Styled.TextDiv>
       <Swiper
         effect="coverflow"
         grabCursor
@@ -76,62 +76,62 @@ const ProgramPage = () => {
         className="mySwiper">
         <SwiperSlide>
           <Styled.Card>
-            <h2>Happiness</h2>
-            <img src="./assets/card-images/happiness.jpg" alt="something" />
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed congue ornare dictum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec commodo magna nulla, sit amet blandit leo varius vel. Donec semper mauris dolor, lacinia suscipit risus pharetra vehicula. Donec ut rhoncus nibh, varius tempor ante. Proin ipsum lectus, dapibus.</p>
-            <button
+            <Styled.ChallengeH2>Happiness</Styled.ChallengeH2>
+            <Styled.CardImage src="./assets/card-images/happier.jpg" alt="something" />
+            <Styled.ChallengeP>Don&apos;t worry, be happy. Change can be hard, but it can also be fun and exciting!</Styled.ChallengeP>
+            <Styled.Button
               type="submit"
               onClick={() => handleClick('happier')}>
               Start
-            </button>
+            </Styled.Button>
           </Styled.Card>
         </SwiperSlide>
         <SwiperSlide>
           <Styled.Card>
-            <h2>Health</h2>
-            <img src="./assets/card-images/health.jpg" alt="something" />
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed congue ornare dictum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec commodo magna nulla, sit amet blandit leo varius vel. Donec semper mauris dolor, lacinia suscipit risus pharetra vehicula. Donec ut rhoncus nibh, varius tempor ante. Proin ipsum lectus, dapibus.</p>
-            <button
+            <Styled.ChallengeH2>Health</Styled.ChallengeH2>
+            <Styled.CardImage src="./assets/card-images/health.jpg" alt="something" />
+            <Styled.ChallengeP>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed congue ornare dictum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec commodo magna nulla, sit amet blandit leo varius vel. Donec semper mauris dolor, lacinia suscipit risus pharetra vehicula. Donec ut rhoncus nibh, varius tempor ante. Proin ipsum lectus, dapibus.</Styled.ChallengeP>
+            <Styled.Button
               type="submit"
               onClick={() => handleClick('healthier')}>
               Start
-            </button>
+            </Styled.Button>
           </Styled.Card>
         </SwiperSlide>
         <SwiperSlide>
           <Styled.Card>
-            <h2>Confidence</h2>
-            <img src="./assets/card-images/confidence.jpg" alt="something" />
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed congue ornare dictum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec commodo magna nulla, sit amet blandit leo varius vel. Donec semper mauris dolor, lacinia suscipit risus pharetra vehicula. Donec ut rhoncus nibh, varius tempor ante. Proin ipsum lectus, dapibus.</p>
-            <button
+            <Styled.ChallengeH2>Confidence</Styled.ChallengeH2>
+            <Styled.CardImage src="./assets/card-images/confidence.jpg" alt="something" />
+            <Styled.ChallengeP>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed congue ornare dictum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec commodo magna nulla, sit amet blandit leo varius vel. Donec semper mauris dolor, lacinia suscipit risus pharetra vehicula. Donec ut rhoncus nibh, varius tempor ante. Proin ipsum lectus, dapibus.</Styled.ChallengeP>
+            <Styled.Button
               type="submit"
               onClick={() => handleClick('confident')}>
               Start
-            </button>
+            </Styled.Button>
           </Styled.Card>
         </SwiperSlide>
         <SwiperSlide>
           <Styled.Card>
-            <h2>Focus</h2>
-            <img src="./assets/card-images/focus.jpg" alt="something" />
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed congue ornare dictum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec commodo magna nulla, sit amet blandit leo varius vel. Donec semper mauris dolor, lacinia suscipit risus pharetra vehicula. Donec ut rhoncus nibh, varius tempor ante. Proin ipsum lectus, dapibus.</p>
-            <button
+            <Styled.ChallengeH2>Focus</Styled.ChallengeH2>
+            <Styled.CardImage src="./assets/card-images/focus.jpg" alt="something" />
+            <Styled.ChallengeP>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed congue ornare dictum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec commodo magna nulla, sit amet blandit leo varius vel. Donec semper mauris dolor, lacinia suscipit risus pharetra vehicula. Donec ut rhoncus nibh, varius tempor ante. Proin ipsum lectus, dapibus.</Styled.ChallengeP>
+            <Styled.Button
               type="submit"
               onClick={() => handleClick('focused')}>
               Start
-            </button>
+            </Styled.Button>
           </Styled.Card>
         </SwiperSlide>
         <SwiperSlide>
           <Styled.Card>
-            <h2>Serenity</h2>
-            <img src="./assets/card-images/serenity.jpg" alt="something" />
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed congue ornare dictum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec commodo magna nulla, sit amet blandit leo varius vel. Donec semper mauris dolor, lacinia suscipit risus pharetra vehicula. Donec ut rhoncus nibh, varius tempor ante. Proin ipsum lectus, dapibus.</p>
-            <button
+            <Styled.ChallengeH2>Serenity</Styled.ChallengeH2>
+            <Styled.CardImage src="./assets/card-images/serenity.jpg" alt="something" />
+            <Styled.ChallengeP>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed congue ornare dictum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec commodo magna nulla, sit amet blandit leo varius vel. Donec semper mauris dolor, lacinia suscipit risus pharetra vehicula. Donec ut rhoncus nibh, varius tempor ante. Proin ipsum lectus, dapibus.</Styled.ChallengeP>
+            <Styled.Button
               type="submit"
               onClick={() => handleClick('Serenity')}>
               Start
-            </button>
+            </Styled.Button>
           </Styled.Card>
         </SwiperSlide>
       </Swiper>

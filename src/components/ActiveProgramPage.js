@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
@@ -87,54 +88,70 @@ const ActiveProgramPage = () => {
   if (currentDay > 7) {
     return (
       <div>
-        <button type="button" onClick={() => navigate('/profile')}>PROFILE</button>
-        <button type="button" onClick={handleLogout}>LOG OUT</button>
-        <h1>Congrats, you completed the week!</h1>
-        <button
-          type="button"
-          onClick={resetActiveProgram}>
-        Woohoo!
-        </button>
+        <Styled.HeaderImg src="assets/logo-blue.png" alt="Hobit logo" />
+        <Styled.Header>
+          <Styled.ProfileButton type="button" onClick={() => navigate('/profile')}>PROFILE</Styled.ProfileButton>
+          <Styled.LogoutButton type="button" onClick={handleLogout}>LOG OUT</Styled.LogoutButton>
+          <h1>Congrats, you completed the week!</h1>
+          <Styled.ProfileButton
+            type="button"
+            onClick={resetActiveProgram}>
+            Woohoo!
+          </Styled.ProfileButton>
+        </Styled.Header>
       </div>
     )
   } else {
     return (
-      <Styled.Wrapper>
-        <div>
-          <button type="button" onClick={() => navigate('/profile')}>PROFILE</button>
-          <button type="button" onClick={handleLogout}>LOG OUT</button>
-        </div>
-        <div>
-          <h2>You&apos;re on DAY {currentDay} of your {activeProgram} initiative!</h2>
-        </div>
-        <Styled.ChallengeContainer>
+      <div>
+        <Styled.HeaderImg src="assets/logo-blue.png" alt="Hobit logo" />
+        <Styled.Wrapper>
+          <Styled.Header>
+            <Styled.ProfileButton type="button" onClick={() => navigate('/profile')}>PROFILE</Styled.ProfileButton>
+            <Styled.LogoutButton type="button" onClick={handleLogout}>LOG OUT</Styled.LogoutButton>
+          </Styled.Header>
           <div>
-            <h3>Past challenges</h3>
-            {objects
-              .filter((object, index) => index + 1 < currentDay)
-              .map((object) => (
+            <Styled.DayTitle>You&apos;re on DAY {currentDay} of your {activeProgram} initiative!</Styled.DayTitle>
+          </div>
+          <Styled.ChallengeContainer>
+            <Styled.ChallengeImageWrapper>
+              <Styled.ProgramImage key={activeProgram} src={`assets/card-images/${activeProgram}.jpg`} alt={`${activeProgram}`} />
+            </Styled.ChallengeImageWrapper>
+            <div>
+              <Styled.TodaysChallengeWrapper>
                 <div>
-                  <h1>{object.title}</h1>
+                  <Styled.ChallengeH3>Today&apos;s challenge</Styled.ChallengeH3>
+                  {/* Map over the objects array and render a component for each object */}
+                  {objects.map((object, index) => {
+                    if (index + 1 === currentDay) {
+                      return (
+                        <div>
+                          <Styled.ChallengeH1>{object.title}</Styled.ChallengeH1>
+                          <Styled.ChallengeH2>{object.description}</Styled.ChallengeH2>
+                        </div>
+                      );
+                    }
+                    return null;
+                  })}
                 </div>
-              ))}
-          </div>
-          <div>
-            <h3>Today&apos;s challenge</h3>
-            {/* Map over the objects array and render a component for each object */}
-            {objects.map((object, index) => {
-              if (index + 1 === currentDay) {
-                return (
-                  <div>
-                    <h1>{object.title}</h1>
-                    <h2>{object.description}</h2>
-                  </div>
-                )
-              }
-              return null;
-            })}
-          </div>
-        </Styled.ChallengeContainer>
-      </Styled.Wrapper>
+              </Styled.TodaysChallengeWrapper>
+              <Styled.PreviousChallengesWrapper>
+                <div>
+                  <Styled.ChallengeH3>Past challenges</Styled.ChallengeH3>
+                  {objects
+                    .filter((object, index) => index + 1 < currentDay)
+                    .map((object) => (
+                      <Styled.ChallengeAndCheckbox>
+                        <Styled.ChallengeH4>{object.title}</Styled.ChallengeH4>
+                        <Styled.Checkbox type="checkbox" defaultChecked />
+                      </Styled.ChallengeAndCheckbox>
+                    ))}
+                </div>
+              </Styled.PreviousChallengesWrapper>
+            </div>
+          </Styled.ChallengeContainer>
+        </Styled.Wrapper>
+      </div>
     )
   }
 }
