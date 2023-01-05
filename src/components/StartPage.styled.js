@@ -37,72 +37,74 @@ export const Styled = {
     font-family: Barlow-Regular;
     text-align: center;
   `,
-  LoginOrRegister: styled.div`
-    display: grid;
-    grid-template-columns: repeat(10, 1fr);
-    place-self: center;
+  LoginOrRegister: styled.h3`
+    // display: grid;
+    // grid-template-columns: repeat(10, 1fr);
+    // place-self: center;
+    // padding-left: 30px;
   `,
-  RegisterText: styled.label`
-    font-family: Unbounded;
-    grid-column-start: 4;
-    font-size: 12px;
-  `,
-  LoginText: styled.label`
-    font-family: Unbounded;
-    font-size: 12px;
-    grid-column-start: 6;
-  `,
-  InputFieldRadio1: styled.input`
-    grid-column-start: 5;
-  `,
-  InputFieldRadio2: styled.input`
-    grid-column-start: 7;
-  `,
-  FormWrapper: styled.div`
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    place-self: center;
-  `,
-  Labels: styled.label`
-    grid-column-start: 2;
-    font-family: Unbounded;
-    font-size: 11px;
-  `,
-  InputFieldUsername: styled.input`
-    grid-column-start: 2;
-    border-top: none;
-    border-left: none;
-    border-right: none;
-    border-bottom: 1px solid black;
-    background-color: none;
-    position: absolute;
-    top: 58%;
-    left: 37%;
-    width: 11rem;
-    height: 2rem;
-  `,
-  InputFieldPassword: styled.input`
-    grid-column-start: 2;
-    border-top: none;
-    border-left: none;
-    border-right: none;
-    border-bottom: 1px solid black;
-    background-color: none;
-    position: absolute;
-    top: 69%;
-    left: 37%;
-    width: 11rem;
-    height: 2rem;
-  `,
-  SubmitBtn: styled.button`
-    grid-column-start: 2;
-    position: absolute;
-    top: 88%;
-    left: 44%;
+  // RegisterText: styled.label`
+  //   font-family: Unbounded;
+  //   grid-column-start: 4;
+  //   font-size: 12px;
+  // `,
+  // LoginText: styled.label`
+  //   font-family: Unbounded;
+  //   font-size: 12px;
+  //   grid-column-start: 6;
+  // `,
+  // InputFieldRadio1: styled.input`
+  //   grid-column-start: 5;
+  // `,
+  // InputFieldRadio2: styled.input`
+  //   grid-column-start: 7;
+  // `,
+  // FormWrapper: styled.div`
+  //   display: grid;
+  //   grid-template-columns: repeat(3, 1fr);
+  //   place-self: center;
+  //   background: #fff;
+  //   padding: 30px;
+  //   box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+  // `,
+  // Label: styled.label`
+  //   bottom: 10px;
+  //   left: 0;
+  //   color: grey;
+  //   pointer-events: none;
+  //   transition: all 0.3s ease;
+  // `,
+  // InputFieldUsername: styled.input`
+  //   grid-column-start: 2;
+  //   border-top: none;
+  //   border-left: none;
+  //   border-right: none;
+  //   border-bottom: 1px solid black;
+  //   background-color: none;
+  // `,
+  // InputFieldPassword: styled.input`
+  //   grid-column-start: 2;
+  //   border-top: none;
+  //   border-left: none;
+  //   border-right: none;
+  //   border-bottom: 1px solid black;
+  //   background-color: none;
+  // `,
+  SubmitButton: styled.button`
     border: none;
     border-bottom: 1px solid black;
     background-color: none;
     font-family: Unbounded;
+  `,
+  ModeButton: styled.button`
+  border: none;
+  background-color: transparent;
+  font-family: Unbounded;
+  padding: 0;
+
+  &:hover {
+    cursor: pointer;
+  }
   `,
   Form: styled.form`
     grid-column-start: 2;

@@ -53,52 +53,54 @@ const StartPage = () => {
   }
 
   return (
-    <div>
-      <Styled.Wrapper>
-        <Styled.HeaderImg src="assets/logo-blue.png" alt="Hobit logo" />
-        <Styled.ImageContainer>
-          <Styled.StartPageImage src="assets/startpageimg.png" alt="Hiker enjoying the view" />
-        </Styled.ImageContainer>
-        <Styled.IntroAndLoginContainer>
-          <Styled.IntroContainer>
-            <Styled.WelcomeHeading>
+    <Styled.Wrapper>
+      <Styled.HeaderImg src="assets/logo-blue.png" alt="Hobit logo" />
+      <Styled.ImageContainer>
+        <Styled.StartPageImage src="assets/startpageimg.png" alt="Hiker enjoying the view" />
+      </Styled.ImageContainer>
+      <Styled.IntroAndLoginContainer>
+        <Styled.IntroContainer>
+          <Styled.WelcomeHeading>
               Welcome!
-            </Styled.WelcomeHeading>
-            <Styled.WelcomeText>
+          </Styled.WelcomeHeading>
+          <Styled.WelcomeText>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit,
             sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
             ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
             velit esse cillum dolore eu fugiat nulla pariatur.
-            </Styled.WelcomeText>
-          </Styled.IntroContainer>
-          <Styled.LoginOrRegister>
-            <Styled.RegisterText htmlFor="register">Register</Styled.RegisterText>
-            <Styled.InputFieldRadio1 type="radio" id="register" checked={mode === 'register'} onChange={() => setMode('register')} />
-            <Styled.LoginText htmlFor="login">Login</Styled.LoginText>
-            <Styled.InputFieldRadio2 type="radio" id="login" checked={mode === 'login'} onChange={() => setMode('login')} />
-          </Styled.LoginOrRegister>
-          <Styled.FormWrapper>
-            <Styled.Form onSubmit={onFormSubmit}>
-              <Styled.Labels htmlFor="username" id="untext">Username</Styled.Labels>
-              <div className="login">
-                <Styled.InputFieldUsername
-                  type="text"
-                  id="username"
-                  value={username}
-                  onChange={(e) => setUsername(e.target.value)} />
-                <Styled.Labels htmlFor="password" id="pwtext">Password</Styled.Labels>
-                <Styled.InputFieldPassword
-                  type="password"
-                  id="password"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)} />
-                <Styled.SubmitBtn type="submit">Submit</Styled.SubmitBtn>
-              </div>
-            </Styled.Form>
-          </Styled.FormWrapper>
-        </Styled.IntroAndLoginContainer>
-      </Styled.Wrapper>
-    </div>
+          </Styled.WelcomeText>
+        </Styled.IntroContainer>
+        <Styled.LoginOrRegister>{mode === 'login' ? 'Log In' : 'Register'}</Styled.LoginOrRegister>
+        <Styled.ModeButton type="button" onClick={() => setMode(mode === 'login' ? 'register' : 'login')}>{mode === 'login' ? 'Not registered yet?' : 'Already registered?'}</Styled.ModeButton>
+        <Styled.Form onSubmit={onFormSubmit}>
+          <div className="wrapper">
+            <div className="input-data">
+              <input
+                type="text"
+                required
+                id="username"
+                value={username}
+                onChange={(e) => setUsername(e.target.value)} />
+              <div className="underline" />
+              <label>Name</label>
+            </div>
+          </div>
+          <div className="wrapper">
+            <div className="input-data">
+              <input
+                type="password"
+                required
+                id="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)} />
+              <div className="underline" />
+              <label>Password</label>
+            </div>
+          </div>
+          <Styled.SubmitButton>Submit</Styled.SubmitButton>
+        </Styled.Form>
+      </Styled.IntroAndLoginContainer>
+    </Styled.Wrapper>
   )
 }
 
