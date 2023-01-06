@@ -61,13 +61,10 @@ const StartPage = () => {
       <Styled.IntroAndLoginContainer>
         <Styled.IntroContainer>
           <Styled.WelcomeHeading>
-              Welcome!
+              A BETTER YOU
           </Styled.WelcomeHeading>
           <Styled.WelcomeText>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-            ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-            velit esse cillum dolore eu fugiat nulla pariatur.
+          Welcome to hobit, where you can make a hobby out of building healthy habits! Stay motivated and on track to building the best version of yourself through fun daily challenges. Log in or register below to get started.
           </Styled.WelcomeText>
         </Styled.IntroContainer>
         <Styled.LoginOrRegister>{mode === 'login' ? 'Log In' : 'Register'}</Styled.LoginOrRegister>
@@ -97,7 +94,7 @@ const StartPage = () => {
               <label>Password</label>
             </div>
           </div>
-          <Styled.SubmitButton>Submit</Styled.SubmitButton>
+          <Styled.SubmitButton>SUBMIT</Styled.SubmitButton>
         </Styled.Form>
       </Styled.IntroAndLoginContainer>
     </Styled.Wrapper>

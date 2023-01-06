@@ -129,7 +129,7 @@ const ProgramPage = () => {
             <Styled.ChallengeP>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed congue ornare dictum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec commodo magna nulla, sit amet blandit leo varius vel. Donec semper mauris dolor, lacinia suscipit risus pharetra vehicula. Donec ut rhoncus nibh, varius tempor ante. Proin ipsum lectus, dapibus.</Styled.ChallengeP>
             <Styled.Button
               type="submit"
-              onClick={() => handleClick('Serenity')}>
+              onClick={() => handleClick('serenity')}>
               Start
             </Styled.Button>
           </Styled.Card>

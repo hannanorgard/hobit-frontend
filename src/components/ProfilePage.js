@@ -48,7 +48,7 @@ const ProfilePage = () => {
           </div>
           <div>
             <h2>Badges</h2>
-            {completedPrograms.map((program) => (
+            {completedPrograms && completedPrograms.map((program) => (
               <img key={program} src={`assets/badges/${program}.png`} alt={`${program} badge`} />
             ))}
           </div>
