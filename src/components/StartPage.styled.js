@@ -24,6 +24,7 @@ export const Styled = {
     width: 85%;
     height: 70%;
     padding: 30px;
+    margin: 0px auto;
   `,
   IntroContainer: styled.div`
   
@@ -35,15 +36,17 @@ export const Styled = {
   `,
   WelcomeText: styled.p`
     font-family: Barlow-Regular;
-    text-align: left;
+    text-align: center;
     margin: 0em 2em;
+    font-size: 1.2em;
   `,
   LoginOrRegister: styled.h3`
     // display: grid;
     // grid-template-columns: repeat(10, 1fr);
     // place-self: center;
     // padding-left: 30px;
-    margin-left: 30px;
+    text-align: center;
+    margin-top: 3em;
   `,
   SubmitButton: styled.button`
     border: none;
@@ -51,7 +54,7 @@ export const Styled = {
     background-color: none;
     font-family: Unbounded;
     font-weight: bold;
-    margin-left: 30px;
+    margin-top: 1em;
     width: 10em;
     height: 2em;
     cursor: pointer;
@@ -67,7 +70,6 @@ export const Styled = {
   background-color: transparent;
   font-family: Unbounded;
   padding: 0;
-  margin-left: 30px;
 
   &:hover {
     cursor: pointer;
@@ -76,6 +78,10 @@ export const Styled = {
   Form: styled.form`
     grid-column-start: 2;
     margin-top: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
   `,
   HeaderImg: styled.img`
     width: 60%;

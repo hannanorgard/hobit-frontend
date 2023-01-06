@@ -15,6 +15,9 @@ export const Styled = {
     border-radius: 10px;
     border: 1px solid rgba( 255, 255, 255, 0.18 );
     padding: 5px 10px 15px 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   `,
   ChallengeH1: styled.h1`
     font-family: Unbounded;
@@ -46,7 +49,7 @@ export const Styled = {
     background-color: white;
     font-family: Unbounded;
     font-size: 1.3em;
-    margin: 0% 42%;
+    margin: 0% auto;
     padding: 0;
   `
 }

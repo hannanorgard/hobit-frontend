@@ -20,6 +20,8 @@ const ProfilePage = () => {
   const todaysDateTimestamp = todaysDate.getTime();
   const currentDay = Math.floor((todaysDateTimestamp - startDayTimestamp) / 86400000) + 1;
 
+  // const [selectedImage, setSelectedImage] = useState(null);
+
   if (!accessToken) {
     navigate('/');
   }
@@ -29,32 +31,35 @@ const ProfilePage = () => {
   };
 
   return (
-    <Styled.Wrapper>
+    <>
       <div>
-        <Styled.ImageContainer>
-          <Styled.ProfilePageImage src="assets/startpageimg.png" alt="Something" />
-        </Styled.ImageContainer>
-        <p>{username}</p>
+        <Styled.ChallengesButton type="button" onClick={() => navigate('/activeprogram')}>VIEW CHALLENGES</Styled.ChallengesButton>
+        <Styled.LogoutButton type="button" onClick={handleLogout}>LOG OUT</Styled.LogoutButton>
       </div>
-      <div>
+      <Styled.Wrapper>
         <div>
-          <button type="button" onClick={() => navigate('/activeprogram')}>VIEW CHALLENGES</button>
-          <button type="button" onClick={handleLogout}>LOG OUT</button>
+          <Styled.ImageContainer>
+            <Styled.ProfilePageImage src="assets/startpageimg.png" alt="Something" />
+          </Styled.ImageContainer>
+          <p>{username}</p>
         </div>
         <div>
+
           <div>
-            <h2>Active Program</h2>
-            <p>{activeProgram} (Day {currentDay})</p>
-          </div>
-          <div>
-            <h2>Badges</h2>
-            {completedPrograms && completedPrograms.map((program) => (
-              <img key={program} src={`assets/badges/${program}.png`} alt={`${program} badge`} />
-            ))}
+            <div>
+              <h2>Active Program</h2>
+              <p>{activeProgram} (Day {currentDay})</p>
+            </div>
+            <div>
+              <h2>Badges</h2>
+              {completedPrograms && completedPrograms.map((program) => (
+                <img key={program} src={`assets/badges/${program}.png`} alt={`${program} badge`} />
+              ))}
+            </div>
           </div>
         </div>
-      </div>
-    </Styled.Wrapper>
+      </Styled.Wrapper>
+    </>
   )
 }
 

@@ -68,8 +68,8 @@ const StartPage = () => {
           </Styled.WelcomeText>
         </Styled.IntroContainer>
         <Styled.LoginOrRegister>{mode === 'login' ? 'Log In' : 'Register'}</Styled.LoginOrRegister>
-        <Styled.ModeButton type="button" onClick={() => setMode(mode === 'login' ? 'register' : 'login')}>{mode === 'login' ? 'Not registered yet?' : 'Already registered?'}</Styled.ModeButton>
         <Styled.Form onSubmit={onFormSubmit}>
+          <Styled.ModeButton type="button" onClick={() => setMode(mode === 'login' ? 'register' : 'login')}>{mode === 'login' ? 'Not registered yet?' : 'Already registered?'}</Styled.ModeButton>
           <div className="wrapper">
             <div className="input-data">
               <input
