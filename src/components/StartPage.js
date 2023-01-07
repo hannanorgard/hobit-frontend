@@ -6,6 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import { API_URL } from 'utils/utils';
 import user from 'reducers/user';
 import { Styled } from './StartPage.styled';
+import Loading from './Loading';
 
 const StartPage = () => {
   const [username, setUsername] = useState('');
@@ -14,6 +15,7 @@ const StartPage = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const accessToken = useSelector((store) => store.user.accessToken);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     if (accessToken) {
@@ -31,6 +33,7 @@ const StartPage = () => {
       body: JSON.stringify({ username, password })
     }
     fetch(API_URL(mode), options)
+    setLoading(true)
       .then((response) => response.json())
       .then((data) => {
         if (data.success) {
@@ -50,6 +53,10 @@ const StartPage = () => {
           dispatch(user.actions.setError(data.response));
         }
       })
+  }
+
+  if (loading) {
+    return <Loading />
   }
 
   return (

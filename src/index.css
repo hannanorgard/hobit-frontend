@@ -88,25 +88,22 @@ code {
   outline: none;
 }
 
-/* .login input[type="password"] {
-  background-color: transparent;
-} */
+.loader {
+  width: 48px;
+  height: 48px;
+  border: 5px solid #4cacbc;
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+  }
 
-/* #untext {
-  position: absolute;
-  top: 62%;
-  left: 37%;
-  transition: 0.5;
-}
-
-#pwtext {
-  position: absolute;
-  top: 73%;
-  left: 37%;
-  transition: 0.5;
-} */
-/* 
-.login {
-  display: grid;
-  grid-template-columns: repeat(3,);
-} */
+  @keyframes rotation {
+  0% {
+      transform: rotate(0deg);
+  }
+  100% {
+      transform: rotate(360deg);
+  }
+  } 
