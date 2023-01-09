@@ -69,10 +69,6 @@ const ActiveProgramPage = () => {
     navigate('/');
   }
 
-  // if (!activeProgram) {
-  //   navigate('/programs');
-  // }
-
   useEffect(() => {
     const options = {
       method: 'GET',

@@ -1,3 +1,4 @@
+/* eslint-disable no-shadow */
 /* eslint-disable max-len */
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React, { useEffect, useState } from 'react';
@@ -15,7 +16,8 @@ const StartPage = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const accessToken = useSelector((store) => store.user.accessToken);
-  const [loading, setLoading] = useState(false);
+  const error = useSelector((store) => store.user.error);
+  const isLoading = useSelector((store) => store.user.isLoading);
 
   useEffect(() => {
     if (accessToken) {
@@ -23,9 +25,15 @@ const StartPage = () => {
     }
   }, [accessToken, navigate])
 
+  if (isLoading) {
+    return (
+      <Loading />
+    )
+  }
+
   const onFormSubmit = (event) => {
     event.preventDefault();
-    setLoading(true);
+    dispatch(user.actions.setLoading(true));
     const options = {
       method: 'POST',
       headers: {
@@ -45,23 +53,20 @@ const StartPage = () => {
           dispatch(user.actions.setActiveProgramDay(data.response.day));
           dispatch(user.actions.setActiveProgramStartDate(data.response.startDate));
           dispatch(user.actions.setCompletedProgram(data.response.completedPrograms));
-          dispatch(user.actions.setError(null))
-          dispatch(user.actions.setLoading(false))
+          dispatch(user.actions.setError(null));
+          dispatch(user.actions.setLoading(false));
         } else {
           dispatch(user.actions.setUsername(null));
           dispatch(user.actions.setUserId(null))
           dispatch(user.actions.setAccessToken(null));
           dispatch(user.actions.setError(data.response));
+          dispatch(user.actions.setLoading(false));
         }
       })
       .catch((error) => {
         console.error(error);
-        dispatch(user.actions.setLoading(false))
+        dispatch(user.actions.setLoading(false));
       });
-  }
-
-  if (loading) {
-    return <Loading />
   }
 
   return (
@@ -106,6 +111,7 @@ const StartPage = () => {
               <label>Password</label>
             </div>
           </div>
+          {error && <Styled.Error>{error}</Styled.Error>}
           <Styled.SubmitButton>SUBMIT</Styled.SubmitButton>
         </Styled.Form>
       </Styled.IntroAndLoginContainer>

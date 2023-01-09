@@ -29,6 +29,11 @@ export const Styled = {
   IntroContainer: styled.div`
   
   `,
+  Error: styled.p`
+  color: red;
+  font-family: Barlow-Regular;
+  font-weight: bold;
+  `,
   WelcomeHeading: styled.h1`
     font-family: Unbounded;
     text-align: center;
