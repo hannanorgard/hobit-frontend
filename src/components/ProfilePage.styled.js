@@ -30,5 +30,5 @@ export const Styled = {
     position: absolute;
     right: 14%;
     top: 5%;
-`,
+`
 }
