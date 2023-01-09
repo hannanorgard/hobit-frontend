@@ -10,7 +10,8 @@ const user = createSlice({
     activeProgramDay: null,
     activeProgramStartDate: null,
     completedPrograms: [''],
-    error: null
+    error: null,
+    isLoading: false
   },
   reducers: {
     setUsername: (store, action) => {
@@ -39,6 +40,9 @@ const user = createSlice({
     },
     setError: (store, action) => {
       store.error = action.payload;
+    },
+    setLoading: (store, action) => {
+      store.isLoading = action.payload;
     }
   }
 });

@@ -25,6 +25,7 @@ const StartPage = () => {
 
   const onFormSubmit = (event) => {
     event.preventDefault();
+    setLoading(true);
     const options = {
       method: 'POST',
       headers: {
@@ -33,7 +34,6 @@ const StartPage = () => {
       body: JSON.stringify({ username, password })
     }
     fetch(API_URL(mode), options)
-    setLoading(true)
       .then((response) => response.json())
       .then((data) => {
         if (data.success) {
@@ -46,6 +46,7 @@ const StartPage = () => {
           dispatch(user.actions.setActiveProgramStartDate(data.response.startDate));
           dispatch(user.actions.setCompletedProgram(data.response.completedPrograms));
           dispatch(user.actions.setError(null))
+          dispatch(user.actions.setLoading(false))
         } else {
           dispatch(user.actions.setUsername(null));
           dispatch(user.actions.setUserId(null))
@@ -53,6 +54,10 @@ const StartPage = () => {
           dispatch(user.actions.setError(data.response));
         }
       })
+      .catch((error) => {
+        console.error(error);
+        dispatch(user.actions.setLoading(false))
+      });
   }
 
   if (loading) {
