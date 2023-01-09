@@ -27,7 +27,12 @@ const ProfilePage = () => {
   }
 
   const handleLogout = () => {
+    dispatch(user.actions.setUsername(null));
+    dispatch(user.actions.setUserId(null))
     dispatch(user.actions.setAccessToken(null));
+    dispatch(user.actions.setActiveProgram(null));
+    dispatch(user.actions.setActiveProgramDay(null));
+    dispatch(user.actions.setActiveProgramStartDate(null));
   };
 
   return (

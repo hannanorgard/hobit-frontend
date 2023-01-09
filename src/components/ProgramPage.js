@@ -77,11 +77,11 @@ const ProgramPage = () => {
         <SwiperSlide>
           <Styled.Card>
             <Styled.ChallengeH2>Happiness</Styled.ChallengeH2>
-            <Styled.CardImage src="./assets/card-images/happier.jpg" alt="something" />
+            <Styled.CardImage src="./assets/card-images/happiness.jpg" alt="something" />
             <Styled.ChallengeP>Don&apos;t worry, be happy. Change can be hard, but it can also be fun and exciting!</Styled.ChallengeP>
             <Styled.Button
               type="submit"
-              onClick={() => handleClick('happier')}>
+              onClick={() => handleClick('happiness')}>
               Start
             </Styled.Button>
           </Styled.Card>
@@ -93,7 +93,7 @@ const ProgramPage = () => {
             <Styled.ChallengeP>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed congue ornare dictum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec commodo magna nulla, sit amet blandit leo varius vel. Donec semper mauris dolor, lacinia suscipit risus pharetra vehicula. Donec ut rhoncus nibh, varius tempor ante. Proin ipsum lectus, dapibus.</Styled.ChallengeP>
             <Styled.Button
               type="submit"
-              onClick={() => handleClick('healthier')}>
+              onClick={() => handleClick('health')}>
               Start
             </Styled.Button>
           </Styled.Card>
@@ -105,7 +105,7 @@ const ProgramPage = () => {
             <Styled.ChallengeP>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed congue ornare dictum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec commodo magna nulla, sit amet blandit leo varius vel. Donec semper mauris dolor, lacinia suscipit risus pharetra vehicula. Donec ut rhoncus nibh, varius tempor ante. Proin ipsum lectus, dapibus.</Styled.ChallengeP>
             <Styled.Button
               type="submit"
-              onClick={() => handleClick('confident')}>
+              onClick={() => handleClick('confidence')}>
               Start
             </Styled.Button>
           </Styled.Card>
@@ -117,7 +117,7 @@ const ProgramPage = () => {
             <Styled.ChallengeP>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed congue ornare dictum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec commodo magna nulla, sit amet blandit leo varius vel. Donec semper mauris dolor, lacinia suscipit risus pharetra vehicula. Donec ut rhoncus nibh, varius tempor ante. Proin ipsum lectus, dapibus.</Styled.ChallengeP>
             <Styled.Button
               type="submit"
-              onClick={() => handleClick('focused')}>
+              onClick={() => handleClick('focus')}>
               Start
             </Styled.Button>
           </Styled.Card>
