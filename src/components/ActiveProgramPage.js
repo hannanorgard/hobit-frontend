@@ -9,7 +9,6 @@ const ActiveProgramPage = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const username = useSelector((store) => store.user.username);
-  const accessToken = useSelector((store) => store.user.accessToken);
   const activeProgram = useSelector((store) => store.user.activeProgram);
   const activeProgramStartDate = useSelector((store) => store.user.activeProgramStartDate);
   const [objects, setObjects] = useState([]);
@@ -40,9 +39,9 @@ const ActiveProgramPage = () => {
       });
   };
 
-  const resetActiveProgram = () => {
+  const activeProgramSuccess = () => {
     addCompletedProgram()
-    console.log('resetActiveProgram invoked')
+    console.log('activeProgramSuccess invoked')
     const options = {
       method: 'PATCH',
       headers: {
@@ -65,8 +64,36 @@ const ActiveProgramPage = () => {
       });
   };
 
-  if (!accessToken) {
-    navigate('/');
+  const activeProgramFail = () => {
+    console.log('activeProgramFail invoked')
+    const options = {
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        category: null,
+        day: null,
+        startDate: null
+      })
+    }
+    fetch(`https://hobit-backend-z7k2rr57ca-lz.a.run.app/updateActiveProgram/${username}`, options)
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data)
+        dispatch(user.actions.setActiveProgram(data.programs.activeProgram.category));
+        dispatch(user.actions.setActiveProgramDay(data.programs.activeProgram.day));
+        dispatch(user.actions.setActiveProgramStartDate(data.programs.activeProgram.startDate));
+        dispatch(user.actions.setError(null));
+      });
+  };
+
+  // if (!accessToken) {
+  //   navigate('/');
+  // }
+
+  if (!activeProgram) {
+    navigate('/programs');
   }
 
   useEffect(() => {
@@ -88,22 +115,29 @@ const ActiveProgramPage = () => {
     dispatch(user.actions.setActiveProgram(null));
     dispatch(user.actions.setActiveProgramDay(null));
     dispatch(user.actions.setActiveProgramStartDate(null));
+    navigate('/');
   };
 
   if (currentDay > 7) {
     return (
       <div>
         <Styled.HeaderImg src="assets/logo-blue.png" alt="Hobit logo" />
-        <Styled.Header>
-          <Styled.ProfileButton type="button" onClick={() => navigate('/profile')}>PROFILE</Styled.ProfileButton>
-          <Styled.LogoutButton type="button" onClick={handleLogout}>LOG OUT</Styled.LogoutButton>
-          <h1>Congrats, you completed the week!</h1>
-          <Styled.ProfileButton
-            type="button"
-            onClick={resetActiveProgram}>
-            Woohoo!
-          </Styled.ProfileButton>
-        </Styled.Header>
+        <h1>The week&apos;s over!</h1>
+        <p>Regardless of whether or not you completed all the challenges, you should be proud of yourself; change is hard.</p>
+        <p>And it doesn&apos;t matter how fast or how far you go on your journey to becoming a better you. The important thing is just that you keep going.</p>
+        <p>If you completed all the challenges this week, you&apos;ve earned a new badge that you can view on your profile page.</p>
+        <p>But if you didn&apos;t, don&apos;t sweat it; you can start over with this program or choose a different one.</p>
+        <p>So, don&apos;t leave us in suspense any longer: How did it go for you this week?</p>
+        <button
+          type="button"
+          onClick={activeProgramSuccess}>
+            I completed all the challenges!
+        </button>
+        <button
+          type="button"
+          onClick={activeProgramFail}>
+            I didn&apos;t complete all the challenges
+        </button>
       </div>
     )
   } else {
