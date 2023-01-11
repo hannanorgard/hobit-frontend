@@ -9,11 +9,11 @@ const ProfilePage = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
-  const completedPrograms = useSelector((store) => store.user.completedPrograms);
   const username = useSelector((store) => store.user.username);
   const activeProgram = useSelector((store) => store.user.activeProgram);
-
+  const completedPrograms = useSelector((store) => store.user.completedPrograms);
   const activeProgramStartDate = useSelector((store) => store.user.activeProgramStartDate);
+
   const startDate = new Date(activeProgramStartDate);
   startDate.setHours(0, 0, 0, 0);
   const startDayTimestamp = startDate.getTime();
@@ -36,10 +36,10 @@ const ProfilePage = () => {
   return (
     <Styled.OuterWrapper>
       <Styled.Navbar>
-        <Styled.HeaderImg src="assets/logo-blue.png" alt="Hobit logo" />
+        <Styled.Logo src="assets/logo-blue.png" alt="Hobit logo" />
         <Styled.ButtonsContainer>
-          <Styled.ChallengesButton type="button" onClick={() => navigate('/activeprogram')}>VIEW CHALLENGES</Styled.ChallengesButton>
-          <Styled.LogoutButton type="button" onClick={handleLogout}>LOG OUT</Styled.LogoutButton>
+          <Styled.Button type="button" onClick={() => navigate('/activeprogram')}>VIEW CHALLENGES</Styled.Button>
+          <Styled.Button type="button" onClick={handleLogout}>LOG OUT</Styled.Button>
         </Styled.ButtonsContainer>
       </Styled.Navbar>
       <Styled.InnerWrapper>
@@ -47,12 +47,14 @@ const ProfilePage = () => {
         <Styled.Heading>Active Program</Styled.Heading>
         <Styled.ActiveProgramText>{activeProgram} (Day {currentDay})</Styled.ActiveProgramText>
         <Styled.Heading>Badges</Styled.Heading>
-        {completedPrograms && completedPrograms.map((program) => (
-          <Styled.BadgesContainer>
-            <Styled.Badge key={program} src={`assets/badges/${program}.png`} alt={`${program} badge`} />
-            <Styled.BadgeText>{program}</Styled.BadgeText>
-          </Styled.BadgesContainer>
-        ))}
+        <Styled.BadgesContainer>
+          {completedPrograms && completedPrograms.map((program) => (
+            <Styled.BadgeWrapper>
+              <Styled.BadgeImage key={program} src={`assets/badges/${program}.png`} alt={`${program} badge`} />
+              <Styled.BadgeText>{program}</Styled.BadgeText>
+            </Styled.BadgeWrapper>
+          ))}
+        </Styled.BadgesContainer>
       </Styled.InnerWrapper>
     </Styled.OuterWrapper>
   )
