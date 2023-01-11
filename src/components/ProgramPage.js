@@ -11,8 +11,8 @@ import { EffectCoverflow } from 'swiper';
 import { Styled } from './ProgramPage.styled';
 
 const ProgramPage = () => {
-  const dispatch = useDispatch();
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const username = useSelector((store) => store.user.username);
   const selectedCategory = useSelector((store) => store.user.activeProgram);
@@ -57,7 +57,10 @@ const ProgramPage = () => {
     <>
       <Styled.TextDiv>
         <Styled.ChallengeH1>What do you want to improve about yourself?</Styled.ChallengeH1>
-        <Styled.ChallengeP>Change can be hard, but it can also be fun and exciting! Start by picking one aspect of your life that you would like to challenge yourself by building healthier habits.</Styled.ChallengeP>
+        <Styled.ChallengeP>
+          Change can be hard, but it can also be fun and exciting!
+          Start by picking one aspect of your life that you would like to challenge yourself by building healthier habits.
+        </Styled.ChallengeP>
       </Styled.TextDiv>
       <Swiper
         effect="coverflow"
@@ -80,7 +83,7 @@ const ProgramPage = () => {
           <Styled.Card>
             <Styled.ChallengeH2>Happiness</Styled.ChallengeH2>
             <Styled.CardImage src="./assets/card-images/happiness.jpg" alt="something" />
-            <Styled.ChallengeP>Don&apos;t worry, be happy. Change can be hard, but it can also be fun and exciting!</Styled.ChallengeP>
+            <Styled.ChallengeP>Turn that frown upside down! A happy you is a healthy you.</Styled.ChallengeP>
             <Styled.Button
               type="submit"
               onClick={() => handleClick('happiness')}>
@@ -92,7 +95,7 @@ const ProgramPage = () => {
           <Styled.Card>
             <Styled.ChallengeH2>Health</Styled.ChallengeH2>
             <Styled.CardImage src="./assets/card-images/health.jpg" alt="something" />
-            <Styled.ChallengeP>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed congue ornare dictum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec commodo magna nulla, sit amet blandit leo varius vel. Donec semper mauris dolor, lacinia suscipit risus pharetra vehicula. Donec ut rhoncus nibh, varius tempor ante. Proin ipsum lectus, dapibus.</Styled.ChallengeP>
+            <Styled.ChallengeP>Your body&apos;s meant to last a lifetime. Take care of it! </Styled.ChallengeP>
             <Styled.Button
               type="submit"
               onClick={() => handleClick('health')}>
@@ -104,7 +107,7 @@ const ProgramPage = () => {
           <Styled.Card>
             <Styled.ChallengeH2>Confidence</Styled.ChallengeH2>
             <Styled.CardImage src="./assets/card-images/confidence.jpg" alt="something" />
-            <Styled.ChallengeP>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed congue ornare dictum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec commodo magna nulla, sit amet blandit leo varius vel. Donec semper mauris dolor, lacinia suscipit risus pharetra vehicula. Donec ut rhoncus nibh, varius tempor ante. Proin ipsum lectus, dapibus.</Styled.ChallengeP>
+            <Styled.ChallengeP>Hey there, handsome.</Styled.ChallengeP>
             <Styled.Button
               type="submit"
               onClick={() => handleClick('confidence')}>
@@ -116,7 +119,7 @@ const ProgramPage = () => {
           <Styled.Card>
             <Styled.ChallengeH2>Focus</Styled.ChallengeH2>
             <Styled.CardImage src="./assets/card-images/focus.jpg" alt="something" />
-            <Styled.ChallengeP>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed congue ornare dictum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec commodo magna nulla, sit amet blandit leo varius vel. Donec semper mauris dolor, lacinia suscipit risus pharetra vehicula. Donec ut rhoncus nibh, varius tempor ante. Proin ipsum lectus, dapibus.</Styled.ChallengeP>
+            <Styled.ChallengeP>Starve your distractions; feed your focus.</Styled.ChallengeP>
             <Styled.Button
               type="submit"
               onClick={() => handleClick('focus')}>
@@ -128,7 +131,7 @@ const ProgramPage = () => {
           <Styled.Card>
             <Styled.ChallengeH2>Serenity</Styled.ChallengeH2>
             <Styled.CardImage src="./assets/card-images/serenity.jpg" alt="something" />
-            <Styled.ChallengeP>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed congue ornare dictum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec commodo magna nulla, sit amet blandit leo varius vel. Donec semper mauris dolor, lacinia suscipit risus pharetra vehicula. Donec ut rhoncus nibh, varius tempor ante. Proin ipsum lectus, dapibus.</Styled.ChallengeP>
+            <Styled.ChallengeP>&quot;To a mind that is still, the whole universe surrenders.&quot;</Styled.ChallengeP>
             <Styled.Button
               type="submit"
               onClick={() => handleClick('serenity')}>

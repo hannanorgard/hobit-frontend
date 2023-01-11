@@ -1,6 +1,5 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 /* eslint-disable no-shadow */
-/* eslint-disable max-len */
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
@@ -10,12 +9,12 @@ import { Styled } from './StartPage.styled';
 import Loading from './Loading';
 
 const StartPage = () => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [mode, setMode] = useState('login');
-
-  const dispatch = useDispatch();
-  const navigate = useNavigate();
 
   const accessToken = useSelector((store) => store.user.accessToken);
   const error = useSelector((store) => store.user.error);
@@ -76,11 +75,11 @@ const StartPage = () => {
       </Styled.ImageWrapper>
       <Styled.IntroAndLoginContainer>
         <Styled.IntroContainer>
-          <Styled.WelcomeHeading>
-              A BETTER YOU
-          </Styled.WelcomeHeading>
+          <Styled.WelcomeHeading>A BETTER YOU</Styled.WelcomeHeading>
           <Styled.WelcomeText>
-          Welcome to hobit, where you can make a hobby out of building healthy habits! Stay motivated and on track to building the best version of yourself through fun daily challenges. Log in or register below to get started.
+          Welcome to hobit, where you can make a hobby out of building healthy habits!
+          Stay motivated and on track to building the best version of yourself
+          through fun daily challenges. Log in or register below to get started.
           </Styled.WelcomeText>
         </Styled.IntroContainer>
         <Styled.LoginOrRegister>{mode === 'login' ? 'Log In' : 'Register'}</Styled.LoginOrRegister>

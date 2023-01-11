@@ -19,13 +19,10 @@ export const Styled = {
     -webkit-backdrop-filter: blur( 4px );
     border-radius: 10px;
     border: 1px solid rgba( 255, 255, 255, 0.18 ); 
-    width: 85%;
-    height: 70%;
     padding: 2rem;
-    margin: 0px auto;
+    margin: 0rem 3rem 0rem 3rem;
   `,
   IntroContainer: styled.div`
-  
   `,
   Error: styled.p`
     color: red;
