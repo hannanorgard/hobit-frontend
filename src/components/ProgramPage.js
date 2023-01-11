@@ -13,13 +13,16 @@ import { Styled } from './ProgramPage.styled';
 const ProgramPage = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+
   const username = useSelector((store) => store.user.username);
   const selectedCategory = useSelector((store) => store.user.activeProgram);
   const accessToken = useSelector((store) => store.user.accessToken);
 
-  if (!accessToken) {
-    navigate('/');
-  }
+  useEffect(() => {
+    if (!accessToken) {
+      navigate('/');
+    }
+  }, [accessToken, navigate])
 
   useEffect(() => {
     if (selectedCategory) {
@@ -28,7 +31,6 @@ const ProgramPage = () => {
   }, [selectedCategory, navigate])
 
   const handleClick = (category) => {
-    // console.log('handleClick invoked')
     const options = {
       method: 'PATCH',
       headers: {
@@ -82,7 +84,7 @@ const ProgramPage = () => {
             <Styled.Button
               type="submit"
               onClick={() => handleClick('happiness')}>
-              Start
+              START
             </Styled.Button>
           </Styled.Card>
         </SwiperSlide>
@@ -94,7 +96,7 @@ const ProgramPage = () => {
             <Styled.Button
               type="submit"
               onClick={() => handleClick('health')}>
-              Start
+              START
             </Styled.Button>
           </Styled.Card>
         </SwiperSlide>
@@ -106,7 +108,7 @@ const ProgramPage = () => {
             <Styled.Button
               type="submit"
               onClick={() => handleClick('confidence')}>
-              Start
+              START
             </Styled.Button>
           </Styled.Card>
         </SwiperSlide>
@@ -118,7 +120,7 @@ const ProgramPage = () => {
             <Styled.Button
               type="submit"
               onClick={() => handleClick('focus')}>
-              Start
+              START
             </Styled.Button>
           </Styled.Card>
         </SwiperSlide>
@@ -130,7 +132,7 @@ const ProgramPage = () => {
             <Styled.Button
               type="submit"
               onClick={() => handleClick('serenity')}>
-              Start
+              START
             </Styled.Button>
           </Styled.Card>
         </SwiperSlide>

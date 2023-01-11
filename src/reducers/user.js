@@ -24,15 +24,12 @@ const user = createSlice({
       store.accessToken = action.payload;
     },
     setActiveProgram: (store, action) => {
-      // console.log('setActiveProgram'
       store.activeProgram = action.payload;
     },
     setActiveProgramDay: (store, action) => {
-      // console.log('setActiveProgramDay')
       store.activeProgramDay = action.payload;
     },
     setActiveProgramStartDate: (store, action) => {
-      // console.log('setActiveProgramStartDate')
       store.activeProgramStartDate = action.payload;
     },
     setCompletedProgram: (store, action) => {

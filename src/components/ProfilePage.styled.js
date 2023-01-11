@@ -1,8 +1,7 @@
 import styled from 'styled-components';
 
 export const Styled = {
-  OuterWrapper: styled.div`
-    width: 100vw;
+  PageContainer: styled.div`
     display: flex;
     flex-direction: column;
 `,
@@ -22,13 +21,23 @@ export const Styled = {
   Button: styled.button`
     border: none;
     border-bottom: 1px solid black;
+    border-radius: 1rem;
     background-color: none;
     font-family: Unbounded;
     width: 10rem;
     height: 2rem;
     margin: 1rem;
+    cursor: pointer;
+
+    &:active {
+      box-shadow: 0 5px #666;
+      transform: translateY(4px);
+    }
+    &:hover {
+      background-color: lightblue;
+    }
 `,
-  InnerWrapper: styled.div`
+  ContentContainer: styled.div`
     margin: 5% 20%;
     background: rgba( 255, 255, 255, 0.25 );
     box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
@@ -57,16 +66,16 @@ export const Styled = {
     display: flex;
   `,
   BadgeWrapper: styled.div`
-  display: flex;
-  align-items: center;
-  flex-direction: column;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
   `,
   BadgeImage: styled.img`
-  width: 40%;
+    width: 20%;
 `,
   BadgeText: styled.h3`
-  font-family: Barlow-Regular;
-  text-transform: uppercase;
-  margin: 0rem 0rem 1rem 0rem;
+    font-family: Barlow-Regular;
+    text-transform: uppercase;
+    margin: 0rem 0rem 1rem 0rem;
 `
 }

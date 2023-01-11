@@ -34,7 +34,7 @@ const ProfilePage = () => {
   };
 
   return (
-    <Styled.OuterWrapper>
+    <Styled.PageContainer>
       <Styled.Navbar>
         <Styled.Logo src="assets/logo-blue.png" alt="Hobit logo" />
         <Styled.ButtonsContainer>
@@ -42,7 +42,7 @@ const ProfilePage = () => {
           <Styled.Button type="button" onClick={handleLogout}>LOG OUT</Styled.Button>
         </Styled.ButtonsContainer>
       </Styled.Navbar>
-      <Styled.InnerWrapper>
+      <Styled.ContentContainer>
         <Styled.UsernameHeading>{username}</Styled.UsernameHeading>
         <Styled.Heading>Active Program</Styled.Heading>
         <Styled.ActiveProgramText>{activeProgram} (Day {currentDay})</Styled.ActiveProgramText>
@@ -55,8 +55,8 @@ const ProfilePage = () => {
             </Styled.BadgeWrapper>
           ))}
         </Styled.BadgesContainer>
-      </Styled.InnerWrapper>
-    </Styled.OuterWrapper>
+      </Styled.ContentContainer>
+    </Styled.PageContainer>
   )
 }
 

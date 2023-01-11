@@ -46,10 +46,20 @@ export const Styled = {
   Button: styled.button`
     border: none;
     border-bottom: 1px solid black;
-    background-color: white;
+    border-radius: 1rem;
+    background-color: none;
     font-family: Unbounded;
-    font-size: 1.3em;
-    margin: 0% auto;
-    padding: 0;
+    width: 10rem;
+    height: 2rem;
+    margin: 0rem auto;
+    cursor: pointer;
+
+    &:active {
+      box-shadow: 0 5px #666;
+      transform: translateY(4px);
+    }
+    &:hover {
+      background-color: lightblue;
+    }
   `
 }

@@ -1,6 +1,6 @@
+/* eslint-disable jsx-a11y/label-has-associated-control */
 /* eslint-disable no-shadow */
 /* eslint-disable max-len */
-/* eslint-disable jsx-a11y/label-has-associated-control */
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
@@ -13,8 +13,10 @@ const StartPage = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [mode, setMode] = useState('login');
+
   const dispatch = useDispatch();
   const navigate = useNavigate();
+
   const accessToken = useSelector((store) => store.user.accessToken);
   const error = useSelector((store) => store.user.error);
   const isLoading = useSelector((store) => store.user.isLoading);
@@ -26,9 +28,7 @@ const StartPage = () => {
   }, [accessToken, navigate])
 
   if (isLoading) {
-    return (
-      <Loading />
-    )
+    return <Loading />
   }
 
   const onFormSubmit = (event) => {
@@ -45,7 +45,6 @@ const StartPage = () => {
       .then((response) => response.json())
       .then((data) => {
         if (data.success) {
-          console.log(data)
           dispatch(user.actions.setUsername(data.response.username));
           dispatch(user.actions.setUserId(data.response.id))
           dispatch(user.actions.setAccessToken(data.response.accessToken));
@@ -70,11 +69,11 @@ const StartPage = () => {
   }
 
   return (
-    <Styled.Wrapper>
-      <Styled.HeaderImg src="assets/logo-blue.png" alt="Hobit logo" />
-      <Styled.ImageContainer>
+    <Styled.PageContainer>
+      <Styled.Logo src="assets/logo-blue.png" alt="Hobit logo" />
+      <Styled.ImageWrapper>
         <Styled.StartPageImage src="assets/startpageimg.png" alt="Hiker enjoying the view" />
-      </Styled.ImageContainer>
+      </Styled.ImageWrapper>
       <Styled.IntroAndLoginContainer>
         <Styled.IntroContainer>
           <Styled.WelcomeHeading>
@@ -115,7 +114,7 @@ const StartPage = () => {
           <Styled.SubmitButton>SUBMIT</Styled.SubmitButton>
         </Styled.Form>
       </Styled.IntroAndLoginContainer>
-    </Styled.Wrapper>
+    </Styled.PageContainer>
   )
 }
 

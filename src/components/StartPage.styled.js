@@ -1,13 +1,11 @@
 import styled from 'styled-components';
 
 export const Styled = {
-  Wrapper: styled.div`
-    height: 100vh;
-    width: 100vw;
+  PageContainer: styled.div`
     display: grid;
     grid-template-columns: 1fr 1fr;
 `,
-  ImageContainer: styled.div`
+  ImageWrapper: styled.div`
     grid-column-start: 1;
   `,
   StartPageImage: styled.img`
@@ -23,16 +21,17 @@ export const Styled = {
     border: 1px solid rgba( 255, 255, 255, 0.18 ); 
     width: 85%;
     height: 70%;
-    padding: 30px;
+    padding: 2rem;
     margin: 0px auto;
   `,
   IntroContainer: styled.div`
   
   `,
   Error: styled.p`
-  color: red;
-  font-family: Barlow-Regular;
-  font-weight: bold;
+    color: red;
+    font-family: Barlow-Regular;
+    font-weight: bold;
+    margin: 0rem;
   `,
   WelcomeHeading: styled.h1`
     font-family: Unbounded;
@@ -46,10 +45,6 @@ export const Styled = {
     font-size: 1.2em;
   `,
   LoginOrRegister: styled.h3`
-    // display: grid;
-    // grid-template-columns: repeat(10, 1fr);
-    // place-self: center;
-    // padding-left: 30px;
     text-align: center;
     margin-top: 3em;
   `,
@@ -69,16 +64,19 @@ export const Styled = {
       box-shadow: 0 5px #666;
       transform: translateY(4px);
     }
+    &:hover {
+      background-color: lightblue;
+    }
   `,
   ModeButton: styled.button`
-  border: none;
-  background-color: transparent;
-  font-family: Unbounded;
-  padding: 0;
-
-  &:hover {
-    cursor: pointer;
-  }
+    border: none;
+    background-color: transparent;
+    font-family: Unbounded;
+    padding: 0;
+  
+    &:hover {
+      cursor: pointer;
+    }
   `,
   Form: styled.form`
     grid-column-start: 2;
@@ -88,7 +86,7 @@ export const Styled = {
     align-items: center;
     flex-direction: column;
   `,
-  HeaderImg: styled.img`
+  Logo: styled.img`
     width: 60%;
     grid-column-start: 1;
     place-self: center;

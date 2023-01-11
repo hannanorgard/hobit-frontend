@@ -28,20 +28,18 @@ code {
   height: 50%;
 }
 
-.wrapper{
+.wrapper {
   width: 90%;
-  /* background: #fff; */
   padding: 1em;
   display: flex;
   justify-content: center;
-  /* box-shadow: 0px 0px 10px rgba(0,0,0,0.1); */
 }
-.wrapper .input-data{
+.wrapper .input-data {
   height: 2em;
   width: 50%;
   position: relative;
 }
-.wrapper .input-data input{
+.wrapper .input-data input {
   height: 100%;
   width: 100%;
   border: none;
@@ -50,12 +48,12 @@ code {
   background: transparent;
 }
 .input-data input:focus ~ label,
-.input-data input:valid ~ label{
+.input-data input:valid ~ label {
   transform: translateY(-20px);
   font-size: 15px;
   color: #4158d0;
 }
-.wrapper .input-data label{
+.wrapper .input-data label {
   position: absolute;
   bottom: 10px;
   left: 0;
@@ -63,13 +61,13 @@ code {
   pointer-events: none;
   transition: all 0.3s ease;
 }
-.input-data .underline{
+.input-data .underline {
   position: absolute;
   height: 2px;
   width: 100%;
   bottom: 0;
 }
-.input-data .underline:before{
+.input-data .underline:before {
   position: absolute;
   content: "";
   height: 100%;
@@ -80,7 +78,7 @@ code {
   transition: transform 0.3s ease;
 }
 .input-data input:focus ~ .underline:before,
-.input-data input:valid ~ .underline:before{
+.input-data input:valid ~ .underline:before {
   transform: scaleX(1);
 }
 

@@ -24,9 +24,11 @@ const ActiveProgramPage = () => {
   const todaysDateTimestamp = todaysDate.getTime();
   const currentDay = Math.floor((todaysDateTimestamp - startDayTimestamp) / 86400000) + 1;
 
-  if (!activeProgram) {
-    navigate('/programs');
-  }
+  useEffect(() => {
+    if (!activeProgram) {
+      navigate('/programs');
+    }
+  }, [activeProgram, navigate])
 
   const addCompletedProgram = () => {
     const options = {
@@ -69,7 +71,6 @@ const ActiveProgramPage = () => {
   };
 
   const activeProgramFail = () => {
-    console.log('activeProgramFail invoked')
     const options = {
       method: 'PATCH',
       headers: {

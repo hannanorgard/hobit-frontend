@@ -3,9 +3,9 @@ import { Styled } from './Loading.styled';
 
 const Loading = () => {
   return (
-    <Styled.Container>
+    <Styled.Wrapper>
       <span className="loader" />
-    </Styled.Container>
+    </Styled.Wrapper>
   )
 }
 

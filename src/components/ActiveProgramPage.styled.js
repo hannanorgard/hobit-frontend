@@ -2,14 +2,11 @@ import styled from 'styled-components';
 
 export const Styled = {
   PageContainer: styled.div`
-    width: 100vw;
-    margin-bottom: 5%;
 `,
   Navbar: styled.div`
     display: flex;
     justify-content: space-between;
 `,
-
   Logo: styled.img`
     width: 20%;
     margin: 1rem;
@@ -22,11 +19,21 @@ export const Styled = {
   Button: styled.button`
     border: none;
     border-bottom: 1px solid black;
+    border-radius: 1rem;
     background-color: none;
     font-family: Unbounded;
     width: 10rem;
     height: 2rem;
     margin: 1rem;
+    cursor: pointer;
+
+    &:active {
+      box-shadow: 0 5px #666;
+      transform: translateY(4px);
+    }
+    &:hover {
+      background-color: lightblue;
+    }
 `,
   ContentContainer: styled.div`
     display: grid;

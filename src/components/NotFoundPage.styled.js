@@ -23,10 +23,20 @@ export const Styled = {
   Button: styled.button`
     border: none;
     border-bottom: 1px solid black;
+    border-radius: 1rem;
     background-color: none;
     font-family: Unbounded;
     width: 10rem;
     height: 2rem;
     margin: 1rem;
+    cursor: pointer;
+
+    &:active {
+        box-shadow: 0 5px #666;
+        transform: translateY(4px);
+      }
+      &:hover {
+        background-color: lightblue;
+      }
   `
 }
