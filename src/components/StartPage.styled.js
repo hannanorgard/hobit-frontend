@@ -2,25 +2,46 @@ import styled from 'styled-components';
 
 export const Styled = {
   PageContainer: styled.div`
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    @media only screen and (min-width: 60rem) {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+`,
+  LogoWrapper: styled.div`
+    margin: 0 auto;
+    width: 60%;
+    @media only screen and (min-width: 60rem) {
+      margin: 1rem 0rem 0rem 3rem;
+    }
+  `,
+  Logo: styled.img`
+    width: 100%;
 `,
   ImageWrapper: styled.div`
-    grid-column-start: 1;
+    @media only screen and (min-width: 60rem) {
+      grid-column-start: 1;
+      display: flex;
+      align-items: center;
+    }
   `,
   StartPageImage: styled.img`
     width: 100%;
   `,
   IntroAndLoginContainer: styled.div`
-    grid-column-start: 2;
+
     background: rgba( 255, 255, 255, 0.25 );
     box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
     backdrop-filter: blur( 4px );
     -webkit-backdrop-filter: blur( 4px );
     border-radius: 10px;
-    border: 1px solid rgba( 255, 255, 255, 0.18 ); 
-    padding: 2rem;
-    margin: 0rem 3rem 0rem 3rem;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    padding: 0.5rem;
+    margin: 0rem 1rem 1rem 1rem;
+    @media only screen and (min-width: 60rem) {
+      grid-column-start: 2;
+      padding: 2rem;
+      margin: 0rem 3rem 0rem 3rem;
+    }
   `,
   IntroContainer: styled.div`
   `,
@@ -38,12 +59,14 @@ export const Styled = {
   WelcomeText: styled.p`
     font-family: Barlow-Regular;
     text-align: center;
-    margin: 0em 2em;
-    font-size: 1.2em;
+    font-size: 1.1rem;
+    @media only screen and (min-width: 60rem) {
+      font-size: 1.2rem;
+    }
   `,
   LoginOrRegister: styled.h3`
     text-align: center;
-    margin-top: 3em;
+    margin-top: 2em;
   `,
   SubmitButton: styled.button`
     border: none;
@@ -56,13 +79,14 @@ export const Styled = {
     height: 2em;
     cursor: pointer;
     border-radius: 2em;
-
-    &:active {
-      box-shadow: 0 5px #666;
-      transform: translateY(4px);
-    }
-    &:hover {
-      background-color: lightblue;
+    @media only screen and (min-width: 60rem) {
+      &:active {
+        box-shadow: 0 5px #666;
+        transform: translateY(4px);
+      }
+      &:hover {
+        background-color: lightblue;
+      }
     }
   `,
   ModeButton: styled.button`
@@ -70,22 +94,18 @@ export const Styled = {
     background-color: transparent;
     font-family: Unbounded;
     padding: 0;
-  
-    &:hover {
-      cursor: pointer;
+    margin-bottom: 1rem;
+    @media only screen and (min-width: 60rem) {
+      &:hover {
+        cursor: pointer;
+      }
     }
   `,
   Form: styled.form`
-    grid-column-start: 2;
     margin-top: 1.5rem;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-  `,
-  Logo: styled.img`
-    width: 60%;
-    grid-column-start: 1;
-    place-self: center;
   `
 }
