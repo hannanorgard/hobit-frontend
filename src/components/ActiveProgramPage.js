@@ -125,16 +125,16 @@ const ActiveProgramPage = () => {
             <Styled.Button type="button" onClick={handleLogout}>LOG OUT</Styled.Button>
           </Styled.ButtonContainer>
         </Styled.Navbar>
+        <Styled.MainHeading>The week&apos;s over!</Styled.MainHeading>
         <Styled.CompletionContentContainer>
-          <Styled.MainHeading>The week&apos;s over!</Styled.MainHeading>
           <Styled.CompletionText>Regardless of whether or not you completed all the challenges, you should be proud of yourself; change is hard.</Styled.CompletionText>
           <Styled.CompletionText>And it doesn&apos;t matter how fast or how far you go on your journey to becoming a better you. The important thing is just that you keep going.</Styled.CompletionText>
           <Styled.CompletionText>If you completed all the challenges this week, you&apos;ve earned a new badge that you can view on your profile page.</Styled.CompletionText>
           <Styled.CompletionText>But if you didn&apos;t, don&apos;t sweat it; you can start over with this program or choose a different one.</Styled.CompletionText>
-          <Styled.CompletionText>So, don&apos;t leave us in suspense any longer: How did it go for you this week?</Styled.CompletionText>
+          <Styled.CompletionText>So, {username}, don&apos;t leave us in suspense any longer. How did it go for you this week?</Styled.CompletionText>
           <Styled.CompletionButtonContainer>
-            <Styled.Button type="button" onClick={activeProgramSuccess}>I completed all the challenges!</Styled.Button>
-            <Styled.Button type="button" onClick={activeProgramFail}>I didn&apos;t complete all the challenges</Styled.Button>
+            <Styled.Button type="button" onClick={activeProgramSuccess}>I completed them all!</Styled.Button>
+            <Styled.Button type="button" onClick={activeProgramFail}>I didn&apos;t complete them all</Styled.Button>
           </Styled.CompletionButtonContainer>
         </Styled.CompletionContentContainer>
       </Styled.PageContainer>

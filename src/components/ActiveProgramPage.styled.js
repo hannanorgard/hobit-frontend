@@ -161,21 +161,27 @@ export const Styled = {
     }
   `,
   CompletionContentContainer: styled.div`
+    margin: 5% 10%;
     background: rgba( 255, 255, 255, 0.25 );
     box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
     backdrop-filter: blur( 4px );
     -webkit-backdrop-filter: blur( 4px );
-    border-radius: 10px;
+    border-radius: 1rem;
     border: 1px solid rgba( 255, 255, 255, 0.18 ); 
   `,
   CompletionText: styled.p`
     font-family: Barlow-Regular;
-    margin: 1rem 25%;
+    margin: 1rem 3rem;
     text-align: center;
   `,
   CompletionButtonContainer: styled.div`
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    @media only screen and (min-width: 60rem) {
+      flex-direction: row;
+      justify-content: center;
+    }
   `
 
 }

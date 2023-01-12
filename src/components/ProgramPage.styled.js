@@ -58,7 +58,7 @@ export const Styled = {
     font-size: 1.5rem;
   `,
   CardImage: styled.img`
-  margin: 0px auto;
+    margin: 0px auto;
 `,
   CardText: styled.p`
     font-family: Barlow-Regular;
