@@ -93,7 +93,7 @@ export const Styled = {
   BadgeImage: styled.img`
     width: 50%;
     @media only screen and (min-width: 60rem) {
-      width: 20%;
+      width: 25%;
     }
 `,
   BadgeText: styled.h3`
