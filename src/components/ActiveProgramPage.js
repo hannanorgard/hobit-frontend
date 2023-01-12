@@ -26,7 +26,7 @@ const ActiveProgramPage = () => {
 
   useEffect(() => {
     if (!activeProgram) {
-      navigate('/programs');
+      navigate('/profile');
     }
   }, [activeProgram, navigate])
 
