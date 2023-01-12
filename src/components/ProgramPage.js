@@ -54,14 +54,14 @@ const ProgramPage = () => {
   };
 
   return (
-    <>
-      <Styled.TextDiv>
-        <Styled.ChallengeH1>What do you want to improve about yourself?</Styled.ChallengeH1>
-        <Styled.ChallengeP>
+    <Styled.PageContainer>
+      <Styled.TextContainer>
+        <Styled.PageHeading>What do you want to improve about yourself?</Styled.PageHeading>
+        <Styled.IntroText>
           Change can be hard, but it can also be fun and exciting!
           Start by picking one aspect of your life that you would like to challenge yourself by building healthier habits.
-        </Styled.ChallengeP>
-      </Styled.TextDiv>
+        </Styled.IntroText>
+      </Styled.TextContainer>
       <Swiper
         effect="coverflow"
         grabCursor
@@ -73,7 +73,7 @@ const ProgramPage = () => {
           stretch: 0,
           depth: 100,
           modifier: 1,
-          slideShadows: true,
+          slideShadows: false,
           scale: 0.5
         }}
         pagination
@@ -81,9 +81,9 @@ const ProgramPage = () => {
         className="mySwiper">
         <SwiperSlide>
           <Styled.Card>
-            <Styled.ChallengeH2>Happiness</Styled.ChallengeH2>
-            <Styled.CardImage src="./assets/card-images/happiness.jpg" alt="something" />
-            <Styled.ChallengeP>Turn that frown upside down! A happy you is a healthy you.</Styled.ChallengeP>
+            <Styled.CardTitle>Happiness</Styled.CardTitle>
+            <Styled.CardImage src="./assets/card-images/happiness.jpg" alt="happy woman" />
+            <Styled.CardText>Turn that frown upside down! A happy you is a healthy you.</Styled.CardText>
             <Styled.Button
               type="submit"
               onClick={() => handleClick('happiness')}>
@@ -93,9 +93,9 @@ const ProgramPage = () => {
         </SwiperSlide>
         <SwiperSlide>
           <Styled.Card>
-            <Styled.ChallengeH2>Health</Styled.ChallengeH2>
-            <Styled.CardImage src="./assets/card-images/health.jpg" alt="something" />
-            <Styled.ChallengeP>Your body&apos;s meant to last a lifetime. Take care of it! </Styled.ChallengeP>
+            <Styled.CardTitle>Health</Styled.CardTitle>
+            <Styled.CardImage src="./assets/card-images/health.jpg" alt="healthy woman" />
+            <Styled.CardText>Your body&apos;s meant to last a lifetime. Take care of it! </Styled.CardText>
             <Styled.Button
               type="submit"
               onClick={() => handleClick('health')}>
@@ -105,9 +105,9 @@ const ProgramPage = () => {
         </SwiperSlide>
         <SwiperSlide>
           <Styled.Card>
-            <Styled.ChallengeH2>Confidence</Styled.ChallengeH2>
-            <Styled.CardImage src="./assets/card-images/confidence.jpg" alt="something" />
-            <Styled.ChallengeP>Hey there, handsome.</Styled.ChallengeP>
+            <Styled.CardTitle>Confidence</Styled.CardTitle>
+            <Styled.CardImage src="./assets/card-images/confidence.jpg" alt="confident man" />
+            <Styled.CardText>Hey there, handsome.</Styled.CardText>
             <Styled.Button
               type="submit"
               onClick={() => handleClick('confidence')}>
@@ -117,9 +117,9 @@ const ProgramPage = () => {
         </SwiperSlide>
         <SwiperSlide>
           <Styled.Card>
-            <Styled.ChallengeH2>Focus</Styled.ChallengeH2>
-            <Styled.CardImage src="./assets/card-images/focus.jpg" alt="something" />
-            <Styled.ChallengeP>Starve your distractions; feed your focus.</Styled.ChallengeP>
+            <Styled.CardTitle>Focus</Styled.CardTitle>
+            <Styled.CardImage src="./assets/card-images/focus.jpg" alt="focused woman" />
+            <Styled.CardText>Starve your distractions; feed your focus.</Styled.CardText>
             <Styled.Button
               type="submit"
               onClick={() => handleClick('focus')}>
@@ -129,9 +129,9 @@ const ProgramPage = () => {
         </SwiperSlide>
         <SwiperSlide>
           <Styled.Card>
-            <Styled.ChallengeH2>Serenity</Styled.ChallengeH2>
-            <Styled.CardImage src="./assets/card-images/serenity.jpg" alt="something" />
-            <Styled.ChallengeP>&quot;To a mind that is still, the whole universe surrenders.&quot;</Styled.ChallengeP>
+            <Styled.CardTitle>Serenity</Styled.CardTitle>
+            <Styled.CardImage src="./assets/card-images/serenity.jpg" alt="serene woman" />
+            <Styled.CardText>&quot;To a mind that is still, the whole universe surrenders.&quot;</Styled.CardText>
             <Styled.Button
               type="submit"
               onClick={() => handleClick('serenity')}>
@@ -140,7 +140,7 @@ const ProgramPage = () => {
           </Styled.Card>
         </SwiperSlide>
       </Swiper>
-    </>
+    </Styled.PageContainer>
   );
 }
 
