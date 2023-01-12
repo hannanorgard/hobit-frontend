@@ -36,7 +36,9 @@ const ProfilePage = () => {
   return (
     <Styled.PageContainer>
       <Styled.Navbar>
-        <Styled.Logo src="assets/logo-blue.png" alt="Hobit logo" />
+        <Styled.LogoWrapper>
+          <Styled.Logo src="assets/logo-blue.png" alt="Hobit logo" />
+        </Styled.LogoWrapper>
         <Styled.ButtonsContainer>
           <Styled.Button type="button" onClick={() => navigate('/activeprogram')}>VIEW CHALLENGES</Styled.Button>
           <Styled.Button type="button" onClick={handleLogout}>LOG OUT</Styled.Button>

@@ -4,19 +4,36 @@ export const Styled = {
   PageContainer: styled.div`
     display: flex;
     flex-direction: column;
+    align-items: center;
 `,
   Navbar: styled.div`
-    display: flex;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  @media only screen and (min-width: 60rem) {
+    flex-direction: row;
     justify-content: space-between;
+  }
+`,
+  LogoWrapper: styled.div`
+  margin: 1rem 0rem;
+  width: 50%;
+  @media only screen and (min-width: 60rem) {
+    margin: 1rem 0rem 0rem 3rem;
+    width: 20%;
+  }
 `,
   Logo: styled.img`
-    width: 20%;
-    margin: 1rem;
+    width: 100%;
 `,
   ButtonsContainer: styled.div`
     display: flex;
+    flex-direction: column;
     justify-content: flex-end;
-    margin: 1rem;
+    @media only screen and (min-width: 60rem) {
+      flex-direction: row;
+      margin-right: 2rem;
+    }
 `,
   Button: styled.button`
     border: none;
@@ -26,19 +43,21 @@ export const Styled = {
     font-family: Unbounded;
     width: 10rem;
     height: 2rem;
-    margin: 1rem;
+    margin: 0.5rem;
     cursor: pointer;
-
-    &:active {
-      box-shadow: 0 5px #666;
-      transform: translateY(4px);
-    }
-    &:hover {
-      background-color: lightblue;
+    @media only screen and (min-width: 60rem) {
+      &:active {
+        box-shadow: 0 5px #666;
+        transform: translateY(4px);
+      }
+      &:hover {
+        background-color: lightblue;
+      }
     }
 `,
   ContentContainer: styled.div`
-    margin: 5% 20%;
+    margin: 5% 5%;
+    min-width: 50%;
     background: rgba( 255, 255, 255, 0.25 );
     box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
     backdrop-filter: blur( 4px );
@@ -64,6 +83,7 @@ export const Styled = {
   `,
   BadgesContainer: styled.div`
     display: flex;
+    width: 80%;
   `,
   BadgeWrapper: styled.div`
     display: flex;
@@ -71,11 +91,18 @@ export const Styled = {
     flex-direction: column;
   `,
   BadgeImage: styled.img`
-    width: 20%;
+    width: 50%;
+    @media only screen and (min-width: 60rem) {
+      width: 20%;
+    }
 `,
   BadgeText: styled.h3`
     font-family: Barlow-Regular;
     text-transform: uppercase;
+    font-size: 0.8rem;
     margin: 0rem 0rem 1rem 0rem;
+    @media only screen and (min-width: 60rem) {
+      font-size: 1rem;
+    }
 `
 }
