@@ -39,10 +39,10 @@ const ProfilePage = () => {
         <Styled.LogoWrapper>
           <Styled.Logo src="assets/logo-blue.png" alt="Hobit logo" />
         </Styled.LogoWrapper>
-        <Styled.ButtonsContainer>
+        <Styled.ButtonContainer>
           <Styled.Button type="button" onClick={() => navigate('/activeprogram')}>VIEW CHALLENGES</Styled.Button>
           <Styled.Button type="button" onClick={handleLogout}>LOG OUT</Styled.Button>
-        </Styled.ButtonsContainer>
+        </Styled.ButtonContainer>
       </Styled.Navbar>
       <Styled.ContentContainer>
         <Styled.UsernameHeading>{username}</Styled.UsernameHeading>

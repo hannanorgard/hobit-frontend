@@ -118,7 +118,9 @@ const ActiveProgramPage = () => {
     return (
       <Styled.PageContainer>
         <Styled.Navbar>
-          <Styled.Logo src="assets/logo-blue.png" alt="Hobit logo" />
+          <Styled.LogoWrapper>
+            <Styled.Logo src="assets/logo-blue.png" alt="Hobit logo" />
+          </Styled.LogoWrapper>
           <Styled.ButtonContainer>
             <Styled.Button type="button" onClick={handleLogout}>LOG OUT</Styled.Button>
           </Styled.ButtonContainer>
@@ -141,7 +143,9 @@ const ActiveProgramPage = () => {
     return (
       <Styled.PageContainer>
         <Styled.Navbar>
-          <Styled.Logo src="assets/logo-blue.png" alt="Hobit logo" />
+          <Styled.LogoWrapper>
+            <Styled.Logo src="assets/logo-blue.png" alt="Hobit logo" />
+          </Styled.LogoWrapper>
           <Styled.ButtonContainer>
             <Styled.Button type="button" onClick={() => navigate('/profile')}>PROFILE</Styled.Button>
             <Styled.Button type="button" onClick={handleLogout}>LOG OUT</Styled.Button>

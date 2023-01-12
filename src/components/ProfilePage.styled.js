@@ -26,7 +26,7 @@ export const Styled = {
   Logo: styled.img`
     width: 100%;
 `,
-  ButtonsContainer: styled.div`
+  ButtonContainer: styled.div`
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
