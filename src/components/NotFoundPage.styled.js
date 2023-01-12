@@ -1,21 +1,25 @@
 import styled from 'styled-components';
 
 export const Styled = {
-  Container: styled.div`
+  PageContainer: styled.div`
     display: flex;
-    flex-direction: column;
-    margin: 5% 20%;
+    justify-content: center;
+    align-items: center;
+  `,
+  ContentContainer: styled.div`
+    margin: 10% 5%;
+    padding: 1rem;
+    text-align: center;
     background: rgba( 255, 255, 255, 0.25 );
     box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
     backdrop-filter: blur( 4px );
     -webkit-backdrop-filter: blur( 4px );
     border-radius: 10px;
     border: 1px solid rgba( 255, 255, 255, 0.18 ); 
-    padding: 1rem 3rem;
-    align-items: center;
 `,
   Heading: styled.h1`
-  font-family: Unbounded;
+    font-family: Unbounded;
+    font-size: 1.5rem;
   `,
   Text: styled.p`
     font-family: Barlow-Regular;
@@ -30,13 +34,14 @@ export const Styled = {
     height: 2rem;
     margin: 1rem;
     cursor: pointer;
-
-    &:active {
+    @media only screen and (min-width: 60rem) {
+      &:active {
         box-shadow: 0 5px #666;
         transform: translateY(4px);
       }
       &:hover {
         background-color: lightblue;
       }
+    }
   `
 }
