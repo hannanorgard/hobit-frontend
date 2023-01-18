@@ -59,7 +59,7 @@ const ProgramPage = () => {
         <Styled.PageHeading>What do you want to improve about yourself?</Styled.PageHeading>
         <Styled.IntroText>
           Change can be hard, but it can also be fun and exciting!
-          Start by picking one aspect of your life that you would like to challenge yourself by building healthier habits.
+          Start by picking one area of your life in which you would like to build healthier habits.
         </Styled.IntroText>
       </Styled.TextContainer>
       <Swiper
