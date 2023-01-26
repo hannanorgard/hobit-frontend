@@ -45,7 +45,6 @@ const ProgramPage = () => {
     fetch(`https://hobit-backend-z7k2rr57ca-lz.a.run.app/updateActiveProgram/${username}`, options)
       .then((response) => response.json())
       .then((data) => {
-        console.log(data)
         dispatch(user.actions.setActiveProgram(data.programs.activeProgram.category));
         dispatch(user.actions.setActiveProgramDay(data.programs.activeProgram.day));
         dispatch(user.actions.setActiveProgramStartDate(data.programs.activeProgram.startDate));
